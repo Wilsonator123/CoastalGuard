@@ -1,6 +1,7 @@
 import os.path
 import json
 import time
+import datetime
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -70,15 +71,14 @@ def read_message(message):
         GIN = find_gin(subject)
         if GIN is None:
             return False
-        print("GIN: ", GIN.group(1))
+        print("GIN: ", GIN)
         body = message['payload']['parts'][0]['body']['data']  # This is the email body in base64
         body = base64.urlsafe_b64decode(body.encode('UTF8'))  # Decoding the base64 email body
 
-        data = {"gin": GIN.group(1)}
+        data = {"gin": GIN}
         data.update(read_body(str(body)))
         filename = data["gin"].replace(" ", "")
         write_to_file(filename, data)
-        print(data)
         return True
 
     except KeyError:
@@ -86,16 +86,24 @@ def read_message(message):
 
 
 def find_gin(subject):
-    GIN = re.search(r"\[\[(.*)\]\]", subject)
-    if GIN is None:
-        GIN = re.search(r"202[0-9] (\d*)", subject)
+    gin = re.search(r"\[\[(.*)\]\]", subject)
+    if gin is None:
+        gin = re.search(r"202[0-9] (\d*)", subject)
+    if gin is None:
+        return False
 
-    return GIN
+    else:
+        temp = gin.group(1).split(" ")
+
+        if temp[0] != str(datetime.date.today().year):
+            gin = str(datetime.date.today().year) + " " + gin.group(1)
+        else:
+            gin = gin.group(1)
+    return gin
 
 
 def read_body(body):
     message = {}
-    print(body)
     # The issue is if it fails to find one property, it will fail to find the rest
     try:
         team = re.search(r"Team: (.*?)\\r", body)
@@ -130,15 +138,19 @@ def read_body(body):
 
 
 def write_to_file(filename: str, data: dict):
-    if check_file_exists(filename+".json"):
+    filename = "./incidents/" + filename + ".json"
+    if check_file_exists(filename):
         print("File exists!")
-        with open(filename + ".json", 'r+') as file:
+        with open(filename) as file:
             old_data = json.load(file)
-            for key in data:
-                if data[key] != "None":
-                    old_data[key] = data[key]
+
+        for key in data:
+            if data[key] != "None":
+                old_data[key] = data[key]
+
+        with open(filename, "w") as file:
             json.dump(old_data, file, indent=4)
-            # file.write(old_data)
+            # file.write(old_data
     else:
         print("File does not exist!")
         with open(filename + ".json", "w") as file:
