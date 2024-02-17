@@ -71,11 +71,10 @@ def read_message(message):
         GIN = find_gin(subject)
         if GIN is None:
             return False
-        print("GIN: ", GIN)
         body = message['payload']['parts'][0]['body']['data']  # This is the email body in base64
         body = base64.urlsafe_b64decode(body.encode('UTF8'))  # Decoding the base64 email body
 
-        data = {"gin": GIN}
+        data = {"gin": GIN, "status": "open"}
         data.update(read_body(str(body)))
         filename = data["gin"].replace(" ", "")
         write_to_file(filename, data)
@@ -103,6 +102,7 @@ def find_gin(subject):
 
 
 def read_body(body):
+    print(body)
     message = {}
     # The issue is if it fails to find one property, it will fail to find the rest
     try:
@@ -114,6 +114,9 @@ def read_body(body):
         zone = re.search(r"Zone: (\d*?)\\r", body)
         casualty = re.search(r"Who is the Casualty: (.*?)\\r", body)
         sent = re.search(r"Sent: (.*?UTC)", body)
+        link = re.search(r"<(https.*)>", body)
+
+        message["link"] = check_link_summary(link.group(1)) if link else "None"
 
         message["team"] = team.group(1) if team else "None"
 
@@ -136,6 +139,10 @@ def read_body(body):
     except AttributeError:
         return
 
+def check_link_summary(link: str):
+    summary = re.sub(r"incident-responder\?", "incident-responder-summary?", link)
+    print(summary)
+    return summary
 
 def write_to_file(filename: str, data: dict):
     filename = "./incidents/" + filename + ".json"
