@@ -1,12 +1,15 @@
 import json
 import re
 
-from flask import abort
+from flask import abort, Flask, request
 from pathlib import Path
-from flask import Flask
-from flask import request
 import subprocess
+
+from weather_api.weather_routes import weather
+
 app = Flask(__name__)
+
+app.register_blueprint(weather, url_prefix='/weather')
 
 def emailReader():
     subprocess.run(["Python", "emailReader.py"])
@@ -40,3 +43,7 @@ def get_case(case_id):
             return json.load(file)
     except FileNotFoundError:
         abort(404)
+
+
+def main():
+    app.run(debug=True)

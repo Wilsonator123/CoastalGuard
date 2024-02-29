@@ -52,8 +52,7 @@ def main():
             message = service.users().messages().get(userId="me", id=message["id"]).execute()
             if not read_message(message):
                 # We need to label the message
-                service.users().messages().modify(userId="me", id=message["id"],
-                                                  body={"addLabelIds": ["TRASH"]}).execute()
+                service.users().messages().modify(userId="me", id=message["id"], body={"addLabelIds": ["TRASH"]}).execute()
                 print("Message deleted!")
             else:
                 # service.users().messages().modify(userId="me", id=message["id"], body={"removeLabelIds": ["UNREAD"]}).execute()
@@ -102,7 +101,7 @@ def find_gin(subject):
 
 
 def read_body(body):
-    print(body)
+
     message = {}
     # The issue is if it fails to find one property, it will fail to find the rest
     try:
@@ -141,7 +140,6 @@ def read_body(body):
 
 def check_link_summary(link: str):
     summary = re.sub(r"incident-responder\?", "incident-responder-summary?", link)
-    print(summary)
     return summary
 
 def write_to_file(filename: str, data: dict):
