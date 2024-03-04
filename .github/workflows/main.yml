@@ -26,6 +26,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          path: coastal-guard/coastal-guard/src/server
+          file: ./coastal-guard/src/server
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/coastal-guard:latest
