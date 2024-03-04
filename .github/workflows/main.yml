@@ -27,4 +27,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/coastal-guard:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/coastal-guard:latest /coastal-guard/src/server
