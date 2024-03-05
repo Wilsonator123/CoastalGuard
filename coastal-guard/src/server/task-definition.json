@@ -26,6 +26,7 @@
             "systemControls": []
         }
     ],
+    "executionRoleArn": "arn:aws:iam::471112689862:user/CoastGuard",
     "family": "sample-fargate",
     "networkMode": "awsvpc",
     "revision": 1,
