@@ -28,7 +28,7 @@
     ],
     "family": "sample-fargate",
     "networkMode": "awsvpc",
-    "revision": 1
+    "revision": 1,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
