@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Moon from "@/app/assets/moon.svg";
-import Map from "@/app/assets/map.svg";
-import TwitterBird from "@/app/assets/twitterBird.svg";
+import Moon from "@/assets/moon.svg";
+import Map from "@/assets/map.svg";
+import TwitterBird from "@/assets/twitter.svg";
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between text-center">

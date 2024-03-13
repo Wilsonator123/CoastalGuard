@@ -1,6 +1,6 @@
 import './globals.css'
 import Image from "next/image";
-import AccountIcon  from "@/app/assets/account.svg";
+import AccountIcon  from "@/assets/account.svg";
 
 export default function Header() {
     return (
