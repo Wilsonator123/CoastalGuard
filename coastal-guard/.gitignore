@@ -12,6 +12,7 @@
 # next.js
 /.next/
 /out/
+*/.venv/*
 
 # production
 /build
@@ -36,6 +37,6 @@ yarn-error.log*
 next-env.d.ts
 
 # Credentials
-/src/server/credentials.json
-/src/server/token.json
+server/credentials.json
+server/token.json
 
