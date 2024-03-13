@@ -4,9 +4,9 @@ import Map from "@/app/assets/map.svg";
 import TwitterBird from "@/app/assets/twitterBird.svg";
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between text-center pt-5">
+    <main className="flex flex-col items-center justify-between text-center">
         <div className="flex w-full h-64 bg-primary text-background text-left items-center justify-center">
-        <div className="text-4xl font-semibold italic w-[1190px]"> Welcome to the situational awareness app designed for HM CoastGuard</div>
+            <div className="text-4xl font-semibold italic w-[1190px]"> Welcome to the situational awareness app designed for HM CoastGuard</div>
         </div>
 
         <div className="flex flex-row w-full justify-evenly items-center px-8 my-20">
