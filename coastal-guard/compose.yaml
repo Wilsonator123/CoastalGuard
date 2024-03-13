@@ -1,0 +1,16 @@
+
+services:
+  client:
+    build: ./client
+    ports:
+      - "3000:3000"
+  server:
+    restart: always
+    build:
+      context: ./server
+      target: builder
+    stop_signal: SIGINT
+    volumes:
+        - ./server:/app/server
+    ports:
+      - '8000:8000'
