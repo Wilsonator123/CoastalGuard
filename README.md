@@ -1,5 +1,16 @@
 # CoastalGuard
 
+Technologies Used:
+- NextJS (React)
+- TailwindCSS
+- Flask
+- Google Gmail API
+- Google 0Auth2
+- Beautiful Soup website scrapper
+- GitActions
+- Docker
+- AWS
+
 ![image](https://github.com/Wilsonator123/coastal-guard/assets/106590637/864dedf0-a33f-4c97-9f55-7c4851882106)
 
 
