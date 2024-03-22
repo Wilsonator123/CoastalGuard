@@ -1,4 +1,4 @@
-import CasesTable from './CasesTable';
+import CasesTable from './casesTable';
 
 const fetchData = async () => {
     const res = await fetch(process.env.API_URL + '/get-cases');
