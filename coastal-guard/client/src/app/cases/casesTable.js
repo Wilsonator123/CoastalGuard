@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import {
     createColumnHelper,
         flexRender,
@@ -53,6 +54,7 @@ const columns = [
     }),
 ]
 export default function Page(props) {
+    const router = useRouter()
     const [data, setData] = useState(() => [...props.data]);
     const table = useReactTable({
         columns,
@@ -80,7 +82,7 @@ export default function Page(props) {
                 </thead>
                 <tbody>
                 {table.getRowModel().rows.map(row => (
-                    <tr key={row.id} className="bg-[#DBDADA] hover:bg-[#E0DBD9] bg-opacity-20"  onClick={() => console.log(row.original.gin)}>
+                    <tr key={row.id} className="bg-[#DBDADA] hover:bg-[#E0DBD9] bg-opacity-20"  onClick={() => router.push(`/cases/${row.original.gin}`)}>
                         {row.getVisibleCells().map(cell => (
                             <td key={cell.id} className="border mx-10 px-5 text-center cursor-pointer w-[225px] h-[60px] text-xl font-semibold">
                                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
