@@ -94,9 +94,9 @@ def find_gin(subject):
         temp = gin.group(1).split(" ")
 
         if temp[0] != str(datetime.date.today().year):
-            gin = str(datetime.date.today().year) + " " + gin.group(1)
+            gin = str(datetime.date.today().year) + "" + gin.group(1)
         else:
-            gin = gin.group(1)
+            gin = gin.group(1).replace(" ", "")
     return gin
 
 
