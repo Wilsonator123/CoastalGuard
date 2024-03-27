@@ -9,7 +9,7 @@ const fetchData = async (gin) => {
 export default function Page({params}) {
     return (
         <>
-            <Case fetchData={fetchData} params={params}/>
+            <Case fetchData={fetchData} params={params} />
         </>
     );
 }

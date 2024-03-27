@@ -1,6 +1,6 @@
 'use client'
 import {useEffect, useState} from "react";
-import Overview from './overview'
+import Overview from './(overview)/overview'
 import OptionList from './optionList'
 export default function Page({fetchData, params}) {
     const [page, setPage] = useState("overview");
@@ -27,7 +27,6 @@ export default function Page({fetchData, params}) {
     }
 
     useEffect(() => {
-        console.log(params)
         fetchData(gin).then((data) => {
             setData(data);
             setLoading(false);
@@ -38,7 +37,7 @@ export default function Page({fetchData, params}) {
         <>
             {loading ? <p>Loading...</p>
                 :
-                <section className="flex w-full min-h-[884px] py-5 px-10">
+                <section className="flex w-full min-h-[884px] py-5 px-5">
                     <OptionList changePage={changePage} active={page}/>
                     {showPage(page, data)}
                 </section>

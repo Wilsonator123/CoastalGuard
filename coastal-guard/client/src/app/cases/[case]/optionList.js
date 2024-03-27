@@ -18,7 +18,7 @@ export default function OptionList( { changePage, active }) {
             <div className={`flex items-center w-full h-12 ${isActive('weather')}`} onClick={() => changePage('weather')}>
                 <p className="text-background font-semibold text-2xl pl-2.5">Weather Details</p>
             </div>
-            <div className={`flex items-center w-full h-12 ${isActive('socialMedia')}`} onClick={() => changePage('weather')}>
+            <div className={`flex items-center w-full h-12 ${isActive('socialMedia')}`} onClick={() => changePage('socialMedia')}>
                 <p className="text-background font-semibold text-2xl pl-2.5">Social Media</p>
             </div>
         </div>
