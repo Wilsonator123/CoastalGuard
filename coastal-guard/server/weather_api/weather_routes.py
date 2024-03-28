@@ -41,7 +41,6 @@ def get_weather():
 
 
 
-
 def filter_weather(response):
     date = time.strftime("%a %d, %b", time.gmtime(response["current"]["dt"]))
     return {
