@@ -24,6 +24,7 @@
 body {
   color: rgb(var(--text));
   background: rgb(var(--background));
+  font-family: var(--font-nunito);
 }
 
 @layer utilities {

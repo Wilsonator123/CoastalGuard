@@ -1,0 +1,29 @@
+{
+    "gin": "2024508164",
+    "link": "https://hmcg-tasking.onmats.com/w/webpage/incident-responder-summary?context_record_id=44304933&webpage_token=065b31e9aefb295253d778bfa0b5cfff1ea9398ce35637371b15d7af377a3887",
+    "team": "HBKCRT",
+    "type": "SUICIDAL FEMALE/ WATER",
+    "date": "Fri, 22 Mar 2024 21:17 UTC",
+    "location": "BEACH HUT 1 / HARWICH",
+    "rv": "CRE TM263320",
+    "gridRef": "TM263320",
+    "zone": "11",
+    "casualty": "FEMALE POSSIBLE SUICIDAL",
+    "sent": "Fri, 22 Mar 2024 22:27 UTC",
+    "created_at": "2024-03-31 17:32:27.941512",
+    "lat": 51.940456118109466,
+    "lon": 1.2937475374436613,
+    "address": {
+        "town": "Harwich",
+        "village": "Tendring",
+        "municipality": "Essex",
+        "ISO3166-2-lvl6": "GB-ESS",
+        "county": "Essex",
+        "state": "England",
+        "ISO3166-2-lvl4": "GB-ENG",
+        "postcode": "CO12 3FR",
+        "country": "United Kingdom",
+        "country_code": "gb"
+    },
+    "w3w": "milder.defender.tearfully"
+}

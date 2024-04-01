@@ -17,9 +17,13 @@ module.exports = {
       "accent": "#324251",
       "zinc": "#DBDADA",
       "white": "#fff",
-      "stone": "#F9F7F6"
+      "stone": "#F9F7F6",
+      "contrast": "#000000",
     },
     extend: {
+      fontFamily:{
+        nunito: ['var(--font-nunito)'],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

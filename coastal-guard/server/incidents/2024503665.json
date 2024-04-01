@@ -1,13 +1,30 @@
 {
     "gin": "2024503665",
-    "status": "open",
     "link": "https://hmcg-tasking.onmats.com/w/webpage/incident-responder-summary?context_record_id=43318425&webpage_token=fb6ab14f317e28291cc364e684f92812a46f9c5ce94792a10518b95202780ca3",
     "team": "HBKCRT",
     "type": "MEDIVAC",
     "date": "Fri, 09 Feb 2024 15:14 UTC",
     "location": "HLS IPSWICH HOSPITAL",
     "rv": "HLS SITE IPSWICH HOSPITAL TM194444",
+    "gridRef": "TM194444",
     "zone": "11",
     "casualty": "MEDIVAC FROM R163",
-    "sent": "Fri, 09 Feb 2024 15:17 UTC"
+    "sent": "Fri, 09 Feb 2024 15:17 UTC",
+    "created_at": "2024-03-31 17:32:28.458359",
+    "last_updated": "2024-03-31 17:32:29.255186",
+    "lat": 52.054528551659914,
+    "lon": 1.201240454304422,
+    "address": {
+        "road": "Heath Lane",
+        "suburb": "Broke Hall",
+        "town": "Ipswich",
+        "county": "Suffolk",
+        "ISO3166-2-lvl6": "GB-SFK",
+        "state": "England",
+        "ISO3166-2-lvl4": "GB-ENG",
+        "postcode": "IP4 5RS",
+        "country": "United Kingdom",
+        "country_code": "gb"
+    },
+    "w3w": "eagles.thin.baking"
 }
