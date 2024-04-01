@@ -2,18 +2,6 @@ import json
 import os
 from pathlib import Path
 
-
-# File for handling file operations
-
-# Create a file
-
-# Read a file
-
-# Write to a file
-
-# Delete a file
-
-
 def create_file(filename):
     Path(filename).touch()
     if check_file_exists(filename):
@@ -22,10 +10,10 @@ def create_file(filename):
         return False
 
 
-def read_file(filename: str, path="./"):
+def read_file(filename: str, path="./", extension=""):
     try:
-        with open(path+filename, "r") as file:
-            if filename.endswith(".json"):
+        with open(path+filename+extension, "r") as file:
+            if extension == ".json":
                 return json.load(file)
             else:
                 return file.read()
@@ -34,24 +22,25 @@ def read_file(filename: str, path="./"):
 
 
 def write_to_file(name, data, route="./", extension=""):
+    old_data = {}
     try:
-        file_name = route + name + extension
-        if not check_file_exists(file_name):
-            create_file(file_name)
-
-        if extension == ".json":
-            with open(file_name, "r") as file:
+        filename = route + name + extension
+        if check_file_exists(filename):
+            with open(filename) as file:
                 old_data = json.load(file)
+
             for key in data:
                 if data[key] != "None":
                     old_data[key] = data[key]
+
             with open(filename, "w") as file:
                 json.dump(old_data, file, indent=4)
-            return True
+                # file.write(old_data
         else:
-            with open(filename, "w") as file:
+            with open(filename, "w+") as file:
+                # data['updates'] = []
+                data = json.dumps(data, indent=4)
                 file.write(data)
-            return True
     except FileNotFoundError:
         return False
 
@@ -74,5 +63,5 @@ def get_files_in_dir(dir):
     return files
 
 
-def check_file_exists(filename: str):
-    return os.path.exists(filename)
+def check_file_exists(filename, path="./", extension=""):
+    return os.path.exists(path+filename+extension)
