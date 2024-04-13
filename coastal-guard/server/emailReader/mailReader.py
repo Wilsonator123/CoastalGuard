@@ -139,6 +139,7 @@ class EmailReader:
         page = scrape_page.ScrapePage(link)
         data = page.read_tables()
         self.data["team"] = self.get_teams(data)
+        self.data["responders"] = self.get_responders(data)
 
     def get_teams(self, data):
         teams = []
@@ -150,3 +151,9 @@ class EmailReader:
                     if call_sign != "None" and call_sign != "-":
                         teams.append(call_sign)
         return teams
+
+    def get_responders(self, data):
+        for table in data:
+            if table["title"] == "Volunteers Attending":
+                return table["rows"]
+        return
