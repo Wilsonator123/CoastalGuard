@@ -27,7 +27,7 @@ def get_cases():
     cases = []  
     files = fileHandler.get_files_in_dir("./incidents")
     for file in files:
-        cases.append(fileHandler.read_file(file, "./incidents/"))
+        cases.append(fileHandler.read_file(file.strip(".json"), "./incidents/", ".json"))
 
     return cases
 
@@ -36,6 +36,16 @@ def get_cases():
 def get_case(case_id):
     return fileHandler.read_file('./incidents/' + case_id + '.json')
 
+@app.get('/get-cameras')
+def get_cameras():
+    cameras = []
+    camera_list = fileHandler.read_file('camera', './webcams/', '.json')
+    if not camera_list:
+        return abort(404, 'No cameras found')
+    for camera in camera_list['cameras']:
+        cameras.append(camera.get('name'))
+
+    return cameras
 
 if __name__ == "__main__":
     t = Thread(target=emailReader)

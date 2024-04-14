@@ -1,0 +1,233 @@
+{
+  "cameras": [
+    {
+      "name": "Potter Heigham",
+      "cameras": [
+        {
+          "name": "Potter Heigham Bridge",
+          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+        },
+        {
+          "name": "Herbert Woods Marina",
+          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+        },
+        {
+          "name": "Guided Tour Webcam",
+          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Hunstanton Sailing Club",
+        "cameras": [
+            {
+            "name": "Hunstanton Sailing Club",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Horning",
+      "cameras": [
+        {
+          "name": "Norfolk River Cottages",
+          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Ranworth Broad Cameras",
+        "cameras": [
+            {
+            "name": "Ranworth Broad",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Hickling",
+        "cameras": [
+            {
+            "name": "Hickling Broad",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Weeting Heath",
+        "cameras": [
+            {
+            "name": "Weeting Heath",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "River Yare Brundall",
+        "cameras": [
+            {
+            "name": "River Yare Brundall",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Wroxham Broad",
+        "cameras": [
+            {
+            "name": "Wroxham Broad",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            },
+            {
+              "name": "Wroxham",
+              "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Great Yarmouth",
+        "cameras": [
+            {
+            "name": "Yarmouth Marine Parade Seafront",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            },
+            {
+              "name": "Yarmouth Central Beach",
+              "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            },
+            {
+              "name": "Gorleston Bandstand",
+              "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            },
+            {
+              "name": "Scratby Beach",
+              "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Blakeney",
+        "cameras": [
+            {
+              "name": "Blakeney Quay",
+              "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Cley",
+        "cameras": [
+            {
+              "name": "Cley Marshes",
+              "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Cromer",
+      "cameras": [
+        {
+          "name": "Cromer Pier",
+          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+        },
+        {
+          "name": "Cromer Beach",
+          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Mundesley",
+        "cameras": [
+            {
+            "name": "Mundesley",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Sheringham",
+        "cameras": [
+            {
+            "name": "Sheringham Beach",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Wells-next-the-Sea",
+        "cameras": [
+            {
+            "name": "Wells-next-the-Sea",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Brancaster",
+        "cameras": [
+            {
+            "name": "Brancaster Sailing Club",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Hunstanton",
+        "cameras": [
+            {
+            "name": "Hunstanton Sea View",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            },
+            {
+              "name": "Hunstanton Promanade",
+              "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            },
+            {
+              "name": "The Green Hunstanton",
+              "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "King's Lynn",
+        "cameras": [
+            {
+            "name": "King's Lynn Pontoon",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Burnham Overy Staithe",
+        "cameras": [
+            {
+            "name": "Burnham Overy Staithe-East",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            },
+            {
+              "name": "Burnham Overy Staithe-West",
+              "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Brundall",
+        "cameras": [
+            {
+            "name": "River Yare",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Barnes Brinkcraft",
+        "cameras": [
+            {
+            "name": "Barnes Brinkcraft",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    }
+  ]
+}
