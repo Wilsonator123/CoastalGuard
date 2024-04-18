@@ -1,6 +1,6 @@
 from flask import Blueprint
 import requests
-from flask import request
+from flask import request, abort
 import os
 import json
 import sys
@@ -26,4 +26,5 @@ def get_cameras():
         cameras = sort_by_distance(camera_list, target)
         return json.dumps(cameras)
     except Exception as e:
-        return str(e)
+        return abort(500, 'Error getting cameras')
+
