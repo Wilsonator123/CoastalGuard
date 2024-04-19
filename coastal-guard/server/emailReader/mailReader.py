@@ -5,7 +5,8 @@ import sys
 
 sys.path.append('../')
 from server import fileHandler
-from server.location.location import set_location
+from location import set_location
+from server.web_scraper import scrape_page
 
 
 class EmailReader:
@@ -42,6 +43,8 @@ class EmailReader:
 
             self.update_location()
 
+            self.scrape_webpage(self.data.get("link", None))
+
             fileHandler.write_to_file(self.gin, self.data, './incidents/', '.json')
 
             return True
@@ -67,7 +70,6 @@ class EmailReader:
     def read_body(self, body):
 
         message = {}
-        # The issue is if it fails to find one property, it will fail to find the rest
         try:
             team = re.search(r"Team: (.*?)\\r", body)
             type = re.search(r"Type: (.*?)\\r", body)
@@ -122,8 +124,6 @@ class EmailReader:
                 for key in location:
                     self.data[key] = location[key]
         else:
-            print("Updating location")
-
             location = set_location(grid_ref)
 
             for key in location:
@@ -132,3 +132,29 @@ class EmailReader:
     def check_link_summary(self, link):
         summary = re.sub(r"incident-responder\?", "incident-responder-summary?", link)
         return summary
+
+    def scrape_webpage(self, link):
+        if link is None or link == "None":
+            return
+
+        page = scrape_page.ScrapePage(link)
+        data = page.read_tables()
+        self.data["team"] = self.get_teams(data)
+        self.data["responders"] = self.get_responders(data)
+
+    def get_teams(self, data):
+        teams = []
+
+        for table in data:
+            if table["title"] == "Team/s Attending":
+                for row in table["rows"]:
+                    call_sign = row.get("Call Sign", "None")
+                    if call_sign != "None" and call_sign != "-":
+                        teams.append(call_sign)
+        return teams
+
+    def get_responders(self, data):
+        for table in data:
+            if table["title"] == "Volunteers Attending":
+                return table["rows"]
+        return
