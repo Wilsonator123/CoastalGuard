@@ -263,6 +263,76 @@
         "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
         }
       ]
+    },
+    {
+      "name": "Aldeburgh",
+      "long": "1.600",
+      "lat": "52.155",
+      "cameras": [
+        {
+          "name": "Aldeburgh Beach Lookout Tower",
+          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Bredfield",
+      "long": "1.313",
+      "lat": "52.130",
+        "cameras": [
+            {
+            "name": "Bredfield near Woodbridge",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+            }
+        ]
+    },
+    {
+      "name": "Felixstowe",
+      "long": "1.351",
+      "lat": "51.961",
+      "cameras": [
+        {
+          "name": "Felixstowe Pier",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Ipswich",
+      "long": "1.148",
+      "lat": "52.056",
+      "cameras": [
+        {
+          "name": "Ipswich Marina",
+            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+        },
+        {
+          "name": "Salthouse Harbour Hotel",
+          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Oulton",
+      "long": "1.704",
+      "lat": "52.470",
+      "cameras": [
+        {
+          "name": "Oulton Broad",
+          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Lowestoft",
+      "long": "1.753",
+      "lat": "52.481",
+      "cameras": [
+        {
+          "name": "Lowestoft Pier",
+          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
+        }
+      ]
     }
   ]
 }

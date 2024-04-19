@@ -8,7 +8,7 @@ const ClearBackground = require('@/assets/weather/ClearBackground.png')
 // const SnowyBackground = require('@/assets/weather/SnowyBackground.png')
 import Sun from '@/assets/weather/icons/sun.svg'
 
-export default function WeatherTitle({data}) {
+export default function WeatherTitle({weather, address}) {
 
     const background = (weather) => {
         let src;
@@ -34,7 +34,8 @@ export default function WeatherTitle({data}) {
     }
 
     const weatherTitle = (weather) => {
-        let title = data.weather.main;
+        console.log(weather)
+        let title = weather['weather'].main;
 
         return title.charAt(0).toUpperCase() + title.slice(1);
     }
@@ -43,15 +44,15 @@ export default function WeatherTitle({data}) {
         <>
             <div className="flex z-30 ml-5">
                 <div>
-                    <p className="text-[64px] text-white">{data.temp}°</p>
+                    <p className="text-[64px] text-white">{weather.temp}°</p>
                 </div>
                 <div className="flex flex-col justify-center pt-2">
-                    <p className="text-[32px] text-white font-semibold leading-6">{weatherTitle()}</p>
-                    <p className="text-xl text-white font-semibold ">Ipswich</p>
+                    <p className="text-[32px] text-white font-semibold leading-6">{weatherTitle(weather)}</p>
+                    <p className="text-xl text-white font-semibold ">{address?.town}</p>
                 </div>
             </div>
-            {data.weather.main === "Sunny" ?? <Sun className="absolute right-10 top-5 z-20" width={60} height={60}/>}
-            {background(data.weather.main)}
+            {weather['weather'].main === "Sunny" ?? <Sun className="absolute right-10 top-5 z-20" width={60} height={60}/>}
+            {background(weather.weather.main)}
         </>
     )
 }

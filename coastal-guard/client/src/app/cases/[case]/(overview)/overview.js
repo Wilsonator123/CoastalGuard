@@ -1,6 +1,7 @@
 import Map from './Map'
 import CaseDetails from './caseDetails'
 import WeatherWidgit from './weatherWidgit'
+import CameraWidgit from './cameraWidgit'
 
 const Page = ({ data }) => {
     return (
@@ -13,7 +14,7 @@ const Page = ({ data }) => {
                 <div className="px-5 mb-5">
                     <div className="flex justify-between my-3">
                         <div>
-                            <p className="text-3xl font-bold">Case Deatils</p>
+                            <p className="text-3xl font-bold">Case Details</p>
                         </div>
                         <div>
                             <p className="text-xl font-bold">Last Updated: Now</p>
@@ -35,10 +36,11 @@ const Page = ({ data }) => {
             </div>
             <div className="flex flex-col w-[45%] bg-[#E48686] mr-5 my-5 rounded-lg">
                 <div className="w-full h-1/3 border rounded-t-lg mb-5">
-                    <WeatherWidgit lon={data.lon} lat={data.lat}/>
+                    <WeatherWidgit lon={data.lon} lat={data.lat} address={data.address}/>
                 </div>
 
                 <div className="w-full h-1/3 bg-accent border mb-5">
+                    <CameraWidgit lon={data.lon} lat={data.lat}/>
                 </div>
 
                 <div className="w-full h-1/3 bg-background border rounded-b-lg">

@@ -4,7 +4,7 @@ export default function CaseDetails({ data }) {
         <>
             <p className="text-2xl font-semibold mb-3">Type of incident: {data.type}</p>
             <p className="text-2xl font-semibold mb-3">Casualty: {data.casualty}</p>
-            <p className="text-2xl font-semibold mb-3">Teams: {data.teams}</p>
+            <p className="text-2xl font-semibold mb-3">Teams: {data.team}</p>
             <div>
                 <p className="text-2xl font-semibold mb-2">Notes:</p>
                 <div className="bg-white w-full h-36 border rounded-md p-2">

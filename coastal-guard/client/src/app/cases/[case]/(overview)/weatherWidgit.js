@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react'
 import Forecast from './forecast'
 import WeatherTitle from './weatherTitle'
 import { fetchWeather } from '@/hooks/case'
-export default function WeatherWidgit() {
+export default function WeatherWidgit({ lon, lat, address }) {
     const [weather, setWeather] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetchWeather(52.6, 1.2).then((data) => {
+        fetchWeather(lat, lon).then((data) => {
             setWeather(data);
             setLoading(false);
         })
-    }, [])
+    }, [lat, lon])
 
 
     return (
@@ -19,7 +19,7 @@ export default function WeatherWidgit() {
             {loading ? <p>Loading...</p> :
                 <>
                     <div className="h-2/3 relative flex items-center ">
-                        <WeatherTitle data={weather}/>
+                        <WeatherTitle weather={weather} address={address}/>
                     </div>
                     <div className="h-1/3  bg-background rounded-b-md">
                         <Forecast data={weather}/>
