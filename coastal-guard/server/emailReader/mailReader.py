@@ -5,7 +5,7 @@ import sys
 
 sys.path.append('../')
 from server import fileHandler
-from location import set_location
+from server.location.location import set_location
 from server.web_scraper import scrape_page
 
 
