@@ -3,7 +3,7 @@ import base64
 import datetime
 import sys
 sys.path.append('../')
-from server import fileHandler
+from server.database import app as database
 from location import set_location
 
 class EmailReader:
@@ -11,6 +11,8 @@ class EmailReader:
     gin = None
     filename = None
     exists = False
+    db = database.Database()
+    file = {}
 
     def __init__(self):
         pass
@@ -22,7 +24,10 @@ class EmailReader:
             if self.gin is None:
                 return False
 
-            self.exists = fileHandler.check_file_exists(self.gin, './incidents/', '.json')
+            self.file = self.db.read_file({"gin": self.gin}, 'incidents')
+
+            if self.file is not None:
+                self.exists = True
 
             body = message['payload']['parts'][0]['body']['data']  # This is the email body in base64
             body = base64.urlsafe_b64decode(body.encode('UTF8'))  # Decoding the base64 email body
@@ -33,15 +38,17 @@ class EmailReader:
             if body is not None:
                 self.data.update(body)
 
-            if fileHandler.check_file_exists(self.gin, './incidents/', '.json'):
-                self.data["last_updated"] = str(datetime.datetime.now())
-            else:
-                self.data["created_at"] = str(datetime.datetime.now())
-
             self.update_location()
 
-            fileHandler.write_to_file(self.gin, self.data, './incidents/', '.json')
-
+            if self.exists:
+                self.data["last_updated"] = str(datetime.datetime.now())
+                for key, value in list(self.data.items()):
+                    if value == "None":
+                        del self.data[key]
+                self.db.write_to_file({"gin": self.gin}, self.data, 'incidents')
+            else:
+                self.data["created_at"] = str(datetime.datetime.now())
+                self.db.create_file(self.data, 'incidents')
             return True
         except KeyError:
             return False
@@ -65,8 +72,6 @@ class EmailReader:
 
 
     def read_body(self, body):
-
-
         message = {}
         # The issue is if it fails to find one property, it will fail to find the rest
         try:
@@ -109,11 +114,14 @@ class EmailReader:
         except AttributeError:
             print("Error in reading body")
             return
+
     def update_location(self):
         gridRef = self.data["gridRef"]
 
         if self.exists:
-            old_data = fileHandler.read_file(self.gin, './incidents/', '.json')
+            old_data = self.file
+            if gridRef == "None":
+                return
 
             if old_data["gridRef"] != gridRef:
                 print("Updating location")
@@ -122,7 +130,6 @@ class EmailReader:
                     self.data[key] = location[key]
         else:
             print("Updating location")
-
             location = set_location(gridRef)
 
             for key in location:
