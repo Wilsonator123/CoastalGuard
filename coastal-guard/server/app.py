@@ -7,10 +7,12 @@ from threading import Thread
 import subprocess
 import fileHandler
 from weather_api.weather_routes import weather
+from account.account_routes import account
 
 app = Flask(__name__)
 
 app.register_blueprint(weather, url_prefix='/weather')
+app.register_blueprint(account, url_prefix='/account')
 
 def emailReader():
     subprocess.run(["python", "./emailReader/emailReader.py"])
