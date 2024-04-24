@@ -1,8 +1,12 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 class Database:
     client = None
-    uri = 'mongodb+srv://dbUser:Bulstrode_52@coastguard.psdmwo8.mongodb.net/?retryWrites=true&w=majority&appName=CoastGuard',
+    uri = os.getenv('MONGO_URI')
 
     def __init__(self):
         client = MongoClient(self.uri, server_api=ServerApi('1'))
