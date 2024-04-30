@@ -1,5 +1,5 @@
 from email_validator import validate_email, EmailNotValidError
-
+from marshmallow import ValidationError
 def email_validator(email):
     try:
         validate_email(email)
