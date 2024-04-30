@@ -13,6 +13,15 @@
   --accent: 50, 66, 81;
 }
 
+.or:before,
+.or:after {
+  height: 1px;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0.35);
+  content: "";
+  flex-grow: 1;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

@@ -19,6 +19,7 @@ module.exports = {
       "white": "#fff",
       "stone": "#F9F7F6",
       "contrast": "#000000",
+      "error": "#ff1f1f"
     },
     extend: {
       fontFamily:{
