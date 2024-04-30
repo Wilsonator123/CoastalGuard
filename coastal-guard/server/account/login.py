@@ -12,6 +12,6 @@ def login(email, password):
         if not auth.check_password(password, user['password']):
             return "Invalid username or password", 401
 
-        return "Login successful", 200
+        return user['_id'], 200
     except Exception as e:
         return str(e), 500
