@@ -4,22 +4,25 @@ import {CSS} from '@dnd-kit/utilities';
 
 export default function SortableItem(props) {
     const {
+        setNodeRef,
         attributes,
         listeners,
-        setNodeRef,
         transform,
-        transition,
-    } = useSortable({id: props.id});
+        transition
+    } = useSortable({
+        id: props.id,
+        data: props.data,
+    });
 
     const style = {
         transform: CSS.Transform.toString(transform),
         transition,
         border: "1px solid red",
-        marginTop: "10px"
+        marginTop: "10px",
     };
 
     return (
-        <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+        <div ref={setNodeRef} style={style}  {...attributes} {...listeners}>
             {props.children}
         </div>
     );

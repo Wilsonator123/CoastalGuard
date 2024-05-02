@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 import {Basic} from './components/base';
 import {
     DndContext,
@@ -19,39 +19,77 @@ import Sortable from '@/components/Sortable';
 import WeatherWidgit from "@/app/cases/[case]/(overview)/components/weatherWidgit";
 
 const Page = ({ data }) => {
-    const [items, setItems] = useState([<Basic data={data} key="Basic"/>, <WeatherWidgit key="WeatherWidgit"/>]);
+    const [items, setItems] = useState([<Basic data={data} key="basic" id="basic"/>, <WeatherWidgit key="weather" id="weather" />]);
+    const itemsId = useMemo(() => items.map((item) => item.key), [items]);
 
-    function dragEndEvent(e) {
-        const { over, active } = e;
-        console.log(over, active)
-        setItems((items) => {
-            return arrayMove(
-                items,
-                items.indexOf(active.id),
-                items.indexOf(over?.id)
-            );
-        });
-    }
+    const sensors = useSensors(
+        useSensor(PointerSensor, {
+            activationConstraint: {
+                distance: 10,
+            },
+        })
+    );
+
 
     return (
         <div className="border flex flex-col w-full rounded-lg ml-5">
-                <div className="ml-5 flex my-3">
-                    <p className="text-5xl font-bold underline">Overview: {data.gin}</p>
-                </div>
-                <DndContext className="flex w-full h-full" onDragEnd={dragEndEvent}>
-                    <SortableContext items={items} >
+            <div className="ml-5 flex my-3">
+                <p className="text-5xl font-bold underline">Overview: {data.gin}</p>
+            </div>
+            <div className="flex flex-row w-full h-full gap-1">
+                <DndContext
+                    sensors={sensors}
+                    onDragEnd={onDragEnd}
+                    onDragOver={onDragOver}
+                >
+                    <SortableContext items={itemsId} >
                         {items.map((item) => (
-                            <Sortable key={item.key} id={item.key}>
-                                <div>
-                                    {item}
-                                </div>
-                            </Sortable>
+                            <>
+                                {item}
+                            </>
                         ))}
                     </SortableContext>
                 </DndContext>
+            </div>
 
         </div>
     );
+
+    function onDragEnd(event) {
+        const { active, over } = event;
+        if (!over) return;
+
+        const activeId = active.id;
+        const overId = over.id;
+
+        if (activeId === overId) return;
+
+        setItems((items) => {
+            const activeColumnIndex = items.findIndex((item) => item.id === activeId);
+
+            const overColumnIndex = items.findIndex((item) => item.id === overId);
+
+            return arrayMove(items, activeColumnIndex, overColumnIndex);
+        });
+    }
+
+    function onDragOver(event) {
+        const { active, over } = event;
+        if (!over) return;
+
+        const activeId = active.id;
+        const overId = over.id;
+
+        if (activeId === overId) return;
+            setItems((items) => {
+                const activeIndex = items.findIndex((i) => i.id === activeId);
+                const overIndex = items.findIndex((i) => i.id === overId);
+
+                return arrayMove(items, activeIndex, overIndex - 1);
+            });
+        }
 }
+
+
 
 export default Page;

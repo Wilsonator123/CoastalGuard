@@ -1,11 +1,32 @@
 import React from 'react';
 import Map from './Map'
 import CaseDetails from './caseDetails'
+import {useSortable} from "@dnd-kit/sortable";
+import {CSS} from "@dnd-kit/utilities";
 
 
-export const Basic = ({data}) => {
+export const Basic = (props) => {
+    const data = props.data;
+    const {
+        setNodeRef,
+        attributes,
+        listeners,
+        transform,
+        transition
+    } = useSortable({
+        id: props.id,
+    });
+
+    const style = {
+        transform: CSS.Transform.toString(transform),
+        transition,
+        border: "1px solid red",
+        marginTop: "10px",
+    };
+
+
     return (
-        <div className="w-[55%] bg-[#D9D9D9] h-[725px] m-5 rounded-lg relative" id="main" key="main">
+        <div className="w-full bg-[#D9D9D9] h-[725px] m-5 rounded-lg relative" id="main" key="main" ref={setNodeRef} style={style} {...attributes} {...listeners}>
             <div className="w-full h-full">
                 <div className="px-5 mb-5">
                     <div className="flex justify-between my-3">
