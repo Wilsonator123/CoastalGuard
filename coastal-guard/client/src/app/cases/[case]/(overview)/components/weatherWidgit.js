@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Forecast from './forecast'
+import Forecast from '../forecast'
 import WeatherTitle from './weatherTitle'
 import { fetchWeather } from '@/hooks/case'
 export default function WeatherWidgit() {
