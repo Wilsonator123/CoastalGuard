@@ -37,7 +37,7 @@ export default function Page({fetchData, params}) {
         <>
             {loading ? <p>Loading...</p>
                 :
-                <section className="flex w-full min-h-[884px] py-5 px-5">
+                <section className="flex py-5">
                     <OptionList changePage={changePage} active={page}/>
                     {showPage(page, data)}
                 </section>

@@ -1,5 +1,5 @@
 import "./globals.css";
-import Header from "./header";
+import Header from "./(header)/header";
 import { Nunito } from "next/font/google";
 
 const nunito = Nunito({

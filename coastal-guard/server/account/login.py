@@ -7,6 +7,7 @@ db = Database()
 def login(email, password):
     try:
         user = db.read_file({"email": email}, 'users')
+        print(user)
         if user is None:
             return "Invalid username or password", 401
         if not auth.check_password(password, user['password']):

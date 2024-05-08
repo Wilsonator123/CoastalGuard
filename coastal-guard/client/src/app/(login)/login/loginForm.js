@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
+import { updateUser } from "@/hooks/user"
 export default function LoginForm() {
     const router = useRouter()
     const { register, handleSubmit, formState: { errors } } = useForm()
@@ -18,7 +19,8 @@ export default function LoginForm() {
                 withCredentials: true
 
             })
-            .then(res => {
+            .then(async res => {
+                await updateUser()
                 router.push('/')
             })
             .catch(err => {
@@ -36,7 +38,7 @@ export default function LoginForm() {
                     }
                     <h1 className="text-3xl text-center">Log In</h1>
                     <div className="flex flex-col gap-1">
-                        <label className="text-lg">email: </label>
+                        <label className="text-lg">Email: </label>
                         <input type="email" name="email" {...register('email', {required: true} )}
                                className="p-1 rounded-md bg-background border"/>
                         {errors.email && <span className="text-error">⚠ Username is required</span>}
@@ -57,7 +59,7 @@ export default function LoginForm() {
                 </div>
                 <div className="flex flex-col px-10">
                     <button
-                        onClick={() => router.push('/signup')}
+                        onClick={() => router.push('/register')}
                         className="my-1 p-2 bg-secondary text-text text-xl rounded-2xl hover:brightness-[.9] border">Sign Up
                     </button>
                 </div>

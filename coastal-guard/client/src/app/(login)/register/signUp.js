@@ -6,7 +6,8 @@ import axios from 'axios'
 import { useRouter } from 'next/navigation'
 export default function SignUp() {
     const router = useRouter()
-    const { register, handleSubmit, formState: { errors }, getValues, setError } = useForm()
+    const { register, handleSubmit, formState: { errors }, getValues} = useForm()
+    const  [error, setError] = useState(null)
 
     const onSubmit = (data) => {
         axios.post('http://localhost:8000/account/createAccount', data,
@@ -18,9 +19,10 @@ export default function SignUp() {
             })
             .then(res => {
                 console.log(res.data)
+                router.push('/')
             })
             .catch(err => {
-                setError('form', {message: 'Failed to create account'})
+                setError(err.response.data.error)
                 console.log(err)
             })
     }
@@ -29,8 +31,8 @@ export default function SignUp() {
         <div className="flex justify-center">
             <div className="flex flex-col w-2/5 gap-5 border py-5">
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 px-10">
-                    {errors.form &&
-                        <div className="flex justify-center text-error text-lg rounded border border-error p-2">⚠ Failed to create account ⚠</div>
+                    {error &&
+                        <div className="flex justify-center text-error text-lg rounded border border-error p-2">⚠ {error} ⚠</div>
                     }
                     <h1 className="text-3xl text-center">Sign Up</h1>
                     <div className="flex flex-col gap-1">
@@ -41,13 +43,13 @@ export default function SignUp() {
                     </div>
                     <div className="flex flex-col gap-1">
                         <label className="text-lg">First Name: </label>
-                        <input type="text" name="text" {...register('fname', {required: true})}
+                        <input type="text" name="text" {...register('first_name', {required: true})}
                                className="p-1 rounded-md bg-background border"/>
                         {errors.fname && <span className="text-error">⚠ First Name is required</span>}
                     </div>
                     <div className="flex flex-col gap-1">
                         <label className="text-lg">Last Name: </label>
-                        <input type="text" name="text" {...register('lname', {required: true})}
+                        <input type="text" name="text" {...register('last_name', {required: true})}
                                className="p-1 rounded-md bg-background border"/>
                         {errors.lname && <span className="text-error">⚠ Last Name is required</span>}
                     </div>

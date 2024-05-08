@@ -1,9 +1,9 @@
 'use client'
 
 import { useUserStore } from '@/stores/userStore';
-import { getUser } from '@/hooks/fetchUser';
+import { getUser, clearUser } from '@/hooks/fetchUser';
 export async function updateUser() {
-    const user = await getUser('test')
+    const user = await getUser();
     if (user) {
         useUserStore.getState().setUser(user);
         return true;
@@ -11,3 +11,8 @@ export async function updateUser() {
     return false;
 }
 
+export async function logout() {
+    await clearUser();
+    useUserStore.getState().logout();
+    return true;
+}

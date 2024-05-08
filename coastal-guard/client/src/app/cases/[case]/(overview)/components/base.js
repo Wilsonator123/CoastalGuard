@@ -15,26 +15,45 @@ export const Basic = (props) => {
         transition
     } = useSortable({
         id: props.id,
+        disabled: !props.edit,
     });
 
     const style = {
         transform: CSS.Transform.toString(transform),
         transition,
-        border: "1px solid red",
-        marginTop: "10px",
+        cursor: props.edit ? 'grab' : 'default'
+    };
+
+    const lastUpdated = (date) => {
+        const currentDate = new Date();
+        const timeDifference = currentDate - date;
+        const minutesDifference = Math.floor(timeDifference / (1000 * 60));
+        const hoursDifference = Math.floor(timeDifference / (1000 * 60 * 60));
+        const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const weeksDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 7));
+
+        if (weeksDifference > 0) {
+            return `${weeksDifference} week${weeksDifference > 1 ? 's' : ''} ago`;
+        } else if (daysDifference > 0) {
+            return `${daysDifference} day${daysDifference > 1 ? 's' : ''} ago`;
+        } else if (hoursDifference > 0) {
+            return `${hoursDifference} hour${hoursDifference > 1 ? 's' : ''} ago`;
+        } else {
+            return `${minutesDifference} minute${minutesDifference > 1 ? 's' : ''} ago`;
+        }
     };
 
 
     return (
-        <div className="w-full bg-[#D9D9D9] h-[725px] m-5 rounded-lg relative" id="main" key="main" ref={setNodeRef} style={style} {...attributes} {...listeners}>
-            <div className="w-full h-full">
+        <div className="min-w-[385px] w-[585px] bg-[#D9D9D9] h-[725px] rounded-lg relative" id="main" key="main" ref={setNodeRef} style={style} {...attributes} {...listeners}>
+            <div className="w-full h-full ">
                 <div className="px-5 mb-5">
                     <div className="flex justify-between my-3">
                         <div>
                             <p className="text-3xl font-bold">Case Details</p>
                         </div>
                         <div>
-                            <p className="text-xl font-bold">Last Updated: Now</p>
+                            <p className="text-xl font-bold">Last Updated: {lastUpdated(new Date(data.last_updated))}</p>
                         </div>
                     </div>
 

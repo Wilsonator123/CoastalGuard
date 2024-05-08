@@ -9,6 +9,10 @@ export function middleware(req) {
         return NextResponse.redirect(new URL('/', req.url))
     }
 
+    if(req.nextUrl.pathname === '/register' && cookie) {
+        return NextResponse.redirect(new URL('/', req.url))
+    }
+
     if(req.nextUrl.pathname === '/account' && !cookie) {
         return NextResponse.redirect(new URL('/login', req.url))
     }
