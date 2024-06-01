@@ -5,7 +5,7 @@ export default function Forecast({ data }) {
 		<div className="flex flex-row justify-evenly h-full rounded-b-md">
 			{data.hourly.map((hour, index) => {
 				if (index >= 6) return;
-				return <ForecastIcon data={hour} index={index} />;
+				return <ForecastIcon key={index} data={hour} index={index} />;
 			})}
 		</div>
 	);
