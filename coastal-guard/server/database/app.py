@@ -9,8 +9,9 @@ class Database:
     uri = os.getenv('MONGO_URI')
 
     def __init__(self):
-        client = MongoClient(self.uri, server_api=ServerApi('1'))
+        client = MongoClient(self.uri)
         self.client = client['CoastGuard']
+        self.client
 
     def read_file(self, args, collection):
         return self.client[collection].find_one(args)

@@ -48,7 +48,7 @@ class EmailReader:
                 self.db.write_to_file({"gin": self.gin}, self.data, 'incidents')
             else:
                 self.data["created_at"] = str(datetime.datetime.now())
-                self.db.create_file(self.data, 'incidents')
+                print(self.db.create_file(self.data, 'incidents'))
             return True
         except KeyError:
             return False
