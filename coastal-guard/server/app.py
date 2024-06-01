@@ -16,6 +16,7 @@ app = Flask(__name__)
 CORS(app, supports_credentials=True, origins=['http://localhost:3000'])
 app.register_blueprint(weather, url_prefix='/weather')
 app.register_blueprint(locations, url_prefix='/location')
+app.register_blueprint(account, url_prefix='/account')
 
 
 def email_reader():

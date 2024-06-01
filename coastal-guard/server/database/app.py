@@ -26,4 +26,4 @@ class Database:
         return self.client[collection].delete_one(args)
 
     def get_files(self, collection, query={}):
-        return self.client[collection].find(query)
+        return list(self.client[collection].find(query))
