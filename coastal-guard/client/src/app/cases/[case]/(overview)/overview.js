@@ -1,7 +1,8 @@
 import Map from "./map";
 import CaseDetails from "./caseDetails";
-import WeatherWidgit from "./weatherWidgit";
+import WeatherWidgit from "./(weather)/weatherWidgit";
 import CameraWidgit from "./cameraWidgit";
+import TidesWidget from "./(tides)/tidesWidgit";
 
 const Page = ({ data }) => {
 	const lastUpdated = (date) => {
@@ -35,9 +36,7 @@ const Page = ({ data }) => {
 	return (
 		<div className="border flex flex-col w-full rounded-lg ml-5">
 			<div className="ml-5 flex my-3">
-				<p className="text-5xl font-bold underline">
-					Overview: {data.gin}
-				</p>
+				<p className="text-5xl font-bold">Overview: {data.gin}</p>
 			</div>
 			<div className="flex w-full ">
 				<div className="w-[55%] bg-[#D9D9D9] h-[725px] m-5 rounded-lg relative">
@@ -77,13 +76,9 @@ const Page = ({ data }) => {
 						</p>
 					</div>
 				</div>
-				<div className="flex flex-col w-[45%] bg-[#E48686] mr-5 my-5 rounded-lg">
+				<div className="flex flex-col w-[45%] mr-5 my-5 rounded-lg">
 					<div className="w-full h-1/3 border rounded-t-lg mb-5">
-						<WeatherWidgit
-							lon={data.lon}
-							lat={data.lat}
-							address={data.address}
-						/>
+						<WeatherWidgit data={data} />
 					</div>
 					<div className="w-full h-1/3 border mb-5">
 						<TidesWidget data={data} />

@@ -3,8 +3,6 @@ import { fetchTides, fetchWeather } from "@/hooks/case";
 import Charts from "./charts";
 const { DateTime } = require("luxon");
 import Arrow from "@/assets/arrow.svg";
-import { set } from "react-hook-form";
-import Compass from "@/assets/compass.svg";
 
 export default function Tides({ data }) {
 	const [tides, setTides] = useState(null);
