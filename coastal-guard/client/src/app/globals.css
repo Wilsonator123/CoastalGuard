@@ -3,41 +3,50 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --text: 25,20,16;
-  --background: 249,247,246;
-  --primary: 21,73,117;
-  --secondary: 219,218,218;
-  --accent: 50, 66, 81;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+	--text: 25, 20, 16;
+	--background: 249, 247, 246;
+	--primary: 21, 73, 117;
+	--secondary: 219, 218, 218;
+	--accent: 50, 66, 81;
+	--tides: linear-gradient(
+		101deg,
+		rgb(0, 106, 251) 0%,
+		rgb(0, 106, 251) 30%,
+		rgb(3, 177, 253) 100%
+	);
 }
 
 .or:before,
 .or:after {
-  height: 1px;
-  width: auto;
-  background-color: rgba(0, 0, 0, 0.35);
-  content: "";
-  flex-grow: 1;
+	height: 1px;
+	width: auto;
+	background-color: rgba(0, 0, 0, 0.35);
+	content: "";
+	flex-grow: 1;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
 }
 
 body {
-  color: rgb(var(--text));
-  background: rgb(var(--background));
-  font-family: var(--font-nunito);
+	color: rgb(var(--text));
+	background: rgb(var(--background));
+	font-family: var(--font-nunito);
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+	.text-balance {
+		text-wrap: balance;
+	}
+	.bg-tides {
+		background-image: var(--tides);
+	}
 }

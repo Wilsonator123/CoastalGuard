@@ -4,7 +4,7 @@ import datetime
 import sys
 sys.path.append('../')
 from server.database import app as database
-from location import set_location
+from server.location.location import set_location
 
 class EmailReader:
     data = {}

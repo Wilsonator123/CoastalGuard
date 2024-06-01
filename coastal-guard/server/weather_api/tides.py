@@ -1,32 +1,47 @@
 import os
+import sys
 import arrow
 import requests
 import json
 from dotenv import load_dotenv
+load_dotenv()
+sys.path.append('../')
+from server.location.location import sort_by_distance
 
-def get_tides(lat, lon, date = arrow.now()):
+def get_closest_tide_station(lat, lon):
+    with open("./weather_api/station_list.json", 'r') as file:
+        data = json.load(file)
+      
+    closest_station = sort_by_distance(data, (lat, lon), 1)
+    return closest_station
+
+def get_tides(lat, lon):
     # Get the current date
-    # url = "https://api.stormglass.io/v2/tide/extremes/point"
-    # date = arrow.get(date).floor('day')
-    # end = date.shift(days=1)
-    # # Get the tide data for the current date
-    # response = requests.get(url,
-    #   params = {
-    #     'lat': lat,
-    #     'lng': lon,
-    #     'start': start.to('UTC').timestamp(),
-    #     'end': end.to('UTC').timestamp(),
-    #   },
-    #   headers = {
-    #     'Authorization':"450f5246-1e72-11ef-95ed-0242ac130004-450f52be-1e72-11ef-95ed-0242ac130004"
-    #   },
-    #   timeout=10  # Add a timeout value in seconds
-    # )
-    # print(response)
+    station = get_closest_tide_station(lat, lon)
+    station_id = station[0]['properties']['Id']
+    url = os.getenv("TIDES_URL") + f"/{station_id}/TidalEvents?duration=2"
+    # Get the tide data for the current date
+    response = requests.get(url,
+      headers = {
+        'Ocp-Apim-Subscription-Key': os.getenv("TIDE_API_KEY")
+      },
+      timeout=10  # Add a timeout value in seconds
+    )
+    
+    response = response.json()
+    print(response)
+    
+    return {'data': response, 'station': station[0]}
+    
 
-    # return response.json()
-    with open("./weather_api/exampleTides.json", 'r') as file:
-            response = file.read()
-    return json.loads(response)
 
-# print(get_tides(37.7749, -122.4194))  # San Francisco, CA
+def get_station_list():
+    url = "https://admiraltyapi.azure-api.net/uktidalapi/api/V1/Stations"
+    response = requests.get(url,
+    headers = {
+        'Ocp-Apim-Subscription-Key': "231c3cc55d63422b8ad166f61d0c3f71"
+    },
+    timeout=10  # Add a timeout value in seconds
+    )
+    print(response.json())
+    return response.json()

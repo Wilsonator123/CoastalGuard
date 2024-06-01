@@ -19,8 +19,8 @@ from weather_api.tides import get_tides
 # Schemas
 
 class WeatherRequest(Schema):
-    lat = fields.Float(required=True)
-    lon = fields.Float(required=True)
+    lat = fields.String(required=True)
+    lon = fields.String(required=True)
 
 class WeatherResponse(Schema):
     date = fields.String(required=True)
@@ -57,47 +57,48 @@ class Station(Schema):
     name = fields.String(required=True)
     lat = fields.Float(required=True)
     lon = fields.Float(required=True)
-    distance = fields.Number(required=True)
     
     @pre_load
     def filter_station(self, data, **kwargs):
         data = {
-            "lon": data["lng"],
-            "distance": round(data["distance"]),
+            "lon": data["lon"],
             "name": data["name"],
             "lat": data["lat"],
         }
         return data
     
-class Meta(Schema):
-    start = fields.String(required=True)
-    end = fields.String(required=True)
-    station = fields.Nested(Station, required=True)
+class TidesRequest(Schema):
+    lat = fields.Float(required=True)
+    lon = fields.Float(required=True)
     
     @pre_load
-    def filter_meta(self, data, **kwargs):
+    def filter_location(self, data, **kwargs):
         data = {
-            "start": data["start"],
-            "end": data["end"],
-            
-            "station": data["station"],
+            "lat": float(data["lat"]),
+            "lon": float(data["lon"]),
         }
         return data
-class TidesRequest(Schema):
-    lat = fields.String(required=True)
-    lon = fields.String(required=True)
-    date = fields.String(validate=validate.Regexp(r"\d{4}-\d{2}-\d{2}"))
     
 class TidesResponse(Schema):
     data = fields.List(fields.Dict(), required=True, error_message="Data is required")
-    meta = fields.Nested(Meta, required=True, error_message="Meta is required")
+    station = fields.Nested(Station, required=True, error_message="Station is required")
     
     @pre_load
     def filter_tides(self, data, **kwargs):
-        data["data"] = [
-            {"time": datetime.fromisoformat(tide["time"]).strftime("%H:%M"), "type": tide["type"], "height": tide["height"]}
-            for tide in data["data"]
-        ]
+        
+        data['data'] = [{
+            "type": "High" if item["EventType"] == "HighWater" else "Low",
+            "date": item["DateTime"] if item.get("DateTime") else item["Date"],
+            "height": item["Height"],
+        } for item in data["data"]]
+        data['station'] = {
+            "name": data["station"]["properties"]["Name"],
+            "lat": data["station"]["lat"],
+            "lon": data["station"]["long"],
+        }
+    
+
+        
         return data
 
 weather_request = WeatherRequest()
@@ -129,7 +130,7 @@ def get_weather():
         # return filter_weather(response.json())
         with open("./weather_api/exampleResponse.json", 'r') as file:
             response = file.read()
-        return filter_weather(json.loads(response))
+        return json.loads(response)
     except ValidationError as error:
         return {"error": error.messages}, 400
 
@@ -160,10 +161,13 @@ def filter_weather(response):
 @weather.route('/get-tides', methods=['GET'])
 def tides():
     try:
-        print(request.args)
-        location = tides_request.load(request.args)
-        tides_data = get_tides(location["lat"], location["lon"], location.get("date"))
-        return tides_response.load(tides_data)
+        # location = tides_request.load(request.args)
+        # tides_data = get_tides(location["lat"], location["lon"])
+        # return tides_response.load(tides_data)
+    
+        with open("./weather_api/exampleTides.json", 'r') as file:
+                response = file.read()
+        return json.loads(response)
     except ValidationError as error:
         print(error)
         return {"error": error.messages}, 400
