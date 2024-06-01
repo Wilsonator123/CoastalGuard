@@ -1,4 +1,5 @@
 from flask import abort, Flask, request
+from flask_cors import CORS
 import json
 import re
 
@@ -10,7 +11,7 @@ from weather_api.weather_routes import weather
 from location.location_routes import locations
 
 app = Flask(__name__)
-
+CORS(app, supports_credentials=True, origins=['http://localhost:3000'])
 app.register_blueprint(weather, url_prefix='/weather')
 app.register_blueprint(locations, url_prefix='/location')
 

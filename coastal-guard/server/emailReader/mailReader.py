@@ -7,6 +7,7 @@ sys.path.append('../')
 from server import fileHandler
 from server.location.location import set_location
 from server.web_scraper import scrape_page
+from server.database import app as database
 
 
 class EmailReader:
@@ -14,6 +15,8 @@ class EmailReader:
     gin = None
     filename = None
     exists = False
+    db = database.Database()
+    file = {}
 
     def __init__(self):
         pass
@@ -25,7 +28,10 @@ class EmailReader:
             if self.gin is None:
                 return False
 
-            self.exists = fileHandler.check_file_exists(self.gin, './incidents/', '.json')
+            self.file = self.db.read_file({"gin": self.gin}, 'incidents')
+
+            if self.file is not None:
+                self.exists = True
 
             body = message['payload']['parts'][0]['body']['data']  # This is the email body in base64
             body = base64.urlsafe_b64decode(body.encode('UTF8'))  # Decoding the base64 email body
@@ -36,17 +42,19 @@ class EmailReader:
             if body is not None:
                 self.data.update(body)
 
-            if fileHandler.check_file_exists(self.gin, './incidents/', '.json'):
-                self.data["last_updated"] = str(datetime.datetime.now())
-            else:
-                self.data["created_at"] = str(datetime.datetime.now())
-
             self.update_location()
 
             self.scrape_webpage(self.data.get("link", None))
 
-            fileHandler.write_to_file(self.gin, self.data, './incidents/', '.json')
-
+            if self.exists:
+                self.data["last_updated"] = str(datetime.datetime.now())
+                for key, value in list(self.data.items()):
+                    if value == "None":
+                        del self.data[key]
+                self.db.write_to_file({"gin": self.gin}, self.data, 'incidents')
+            else:
+                self.data["created_at"] = str(datetime.datetime.now())
+                print(self.db.create_file(self.data, 'incidents'))
             return True
         except KeyError:
             return False
@@ -68,7 +76,6 @@ class EmailReader:
         self.gin = gin
 
     def read_body(self, body):
-
         message = {}
         try:
             team = re.search(r"Team: (.*?)\\r", body)

@@ -14,10 +14,10 @@ def main():
 
         messages = check_inbox(service)
 
-
         for message in messages:
             message = get_message(service, message["id"])
             EmailReader().read_mail(message)
+            mark_as_read(service, message["id"])
 
     except HttpError as error:
         # TODO(developer) - Handle errors from gmail API.
@@ -36,6 +36,15 @@ def check_inbox(service):
 
 def get_message(service, msg_id):
     return service.users().messages().get(userId="me", id=msg_id).execute()
+
+def mark_as_read(service, msg_id):
+    service.users().messages().modify(
+        userId="me",
+        id=msg_id,
+        body={
+            "removeLabelIds": ["UNREAD"]
+        }
+    ).execute()
 
 if __name__ == "__main__":
     main()
