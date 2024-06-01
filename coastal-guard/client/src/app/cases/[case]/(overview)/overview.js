@@ -3,6 +3,7 @@ import CaseDetails from "./caseDetails";
 import WeatherWidgit from "./(weather)/weatherWidgit";
 import CameraWidgit from "./cameraWidgit";
 import TidesWidget from "./(tides)/tidesWidgit";
+import TeamWidgit from "./(team)/teamWidgit";
 
 const Page = ({ data }) => {
 	const lastUpdated = (date) => {
@@ -85,7 +86,7 @@ const Page = ({ data }) => {
 					</div>
 
 					<div className="w-full h-1/3 bg-accent border mb-5">
-						<CameraWidgit lon={data.lon} lat={data.lat} />
+						<TeamWidgit data={data} />
 					</div>
 				</div>
 			</div>

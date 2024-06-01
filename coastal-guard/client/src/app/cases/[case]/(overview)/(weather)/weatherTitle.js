@@ -30,6 +30,7 @@ export default function WeatherTitle({ data }) {
 				className="absolute z-10 top-0 left-0"
 				src={src}
 				fill={true}
+				alt="Weather Background"
 			/>
 		);
 	};
