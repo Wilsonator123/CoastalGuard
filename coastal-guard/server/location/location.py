@@ -54,6 +54,13 @@ def compare_distance(loc, target):
     except:
         pass
 
+def add_distance(locations, target):
+    for loc in locations:
+        loc['distance'] = compare_distance(loc, target)
+    return locations
 
 def sort_by_distance(locations, target):
-    return sorted(locations, key=lambda x: compare_distance(x, target))
+    for loc in locations:
+        loc['distance'] = compare_distance(loc, target)
+        
+    return sorted(locations, key=lambda x: x['distance'])

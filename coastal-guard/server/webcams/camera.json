@@ -1,338 +1,290 @@
 {
-  "cameras": [
-    {
-      "name": "Potter Heigham",
-      "long": "1.5733",
-      "lat": "52.7228",
-      "cameras": [
-        {
-          "name": "Potter Heigham Bridge",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        },
-        {
-          "name": "Herbert Woods Marina",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        },
-        {
-          "name": "Guided Tour Webcam",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Hunstanton Sailing Club",
-      "long": "0.491",
-      "lat": "52.9389",
-      "cameras": [
-        {
-        "name": "Hunstanton Sailing Club",
-        "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Horning",
-      "long": "1.4643",
-      "lat": "52.7045",
-      "cameras": [
-        {
-          "name": "Norfolk River Cottages",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Ranworth Broad Cameras",
-      "long": "1.4867",
-      "lat": "52.6786",
-      "cameras": [
-        {
-        "name": "Ranworth Broad",
-        "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Hickling",
-      "long": "1.5755",
-      "lat": "52.7624",
-      "cameras": [
-        {
-        "name": "Hickling Broad",
-        "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Weeting Heath",
-      "long": "0.6095",
-      "lat": "52.4686",
-      "cameras": [
-        {
-        "name": "Weeting Heath",
-        "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "River Yare Brundall",
-      "long": "1.4365",
-      "lat": "52.6240",
-      "cameras": [
-        {
-        "name": "River Yare Brundall",
-        "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Wroxham Broad",
-      "long": "1.4073",
-      "lat": "52.7043",
-      "cameras": [
-        {
-        "name": "Wroxham Broad",
-        "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        },
-        {
-          "name": "Wroxham",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        },
-        {
-          "name": "Barnes Brinkcraft",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Great Yarmouth",
-      "long": "1.7280",
-      "lat": "52.5982",
-      "cameras": [
-        {
-        "name": "Yarmouth Marine Parade Seafront",
-        "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        },
-        {
-          "name": "Yarmouth Central Beach",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        },
-        {
-          "name": "Gorleston Bandstand",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        },
-        {
-          "name": "Scratby Beach",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Blakeney",
-      "long": "1.0144",
-      "lat": "52.9537",
-      "cameras": [
-        {
-          "name": "Blakeney Quay",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Cley",
-      "long": "1.0427",
-      "lat": "52.9531",
-      "cameras": [
-        {
-          "name": "Cley Marshes",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Cromer",
-      "long": "1.3019",
-      "lat": "52.9314",
-      "cameras": [
-        {
-          "name": "Cromer Pier",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        },
-        {
-          "name": "Cromer Beach",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Mundesley",
-      "long": "1.4332",
-      "lat": "52.8754",
-      "cameras": [
-        {
-        "name": "Mundesley",
-        "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Sheringham",
-      "long": "1.2110",
-      "lat": "52.9444",
-      "cameras": [
-        {
-        "name": "Sheringham Beach",
-        "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Wells-next-the-Sea",
-      "long": "0.8489",
-      "lat": "52.9546",
-      "cameras": [
-        {
-        "name": "Wells-next-the-Sea",
-        "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Brancaster",
-      "long": "0.6389",
-      "lat": "52.9624",
-      "cameras": [
-        {
-        "name": "Brancaster Sailing Club",
-        "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Hunstanton",
-      "long": "0.4910",
-      "lat": "52.9389",
-      "cameras": [
-        {
-        "name": "Hunstanton Sea View",
-        "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        },
-        {
-          "name": "Hunstanton Promanade",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        },
-        {
-          "name": "The Green Hunstanton",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "King's Lynn",
-      "long": "0.4023",
-      "lat": "52.7517",
-      "cameras": [
-        {
-        "name": "King's Lynn Pontoon",
-        "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Burnham Overy Staithe",
-      "long": "0.7442",
-      "lat": "52.9636",
-      "cameras": [
-        {
-        "name": "Burnham Overy Staithe-East",
-        "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        },
-        {
-          "name": "Burnham Overy Staithe-West",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Brundall",
-      "long": "1.4365",
-      "lat": "52.6240",
-      "cameras": [
-        {
-        "name": "River Yare",
-        "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Aldeburgh",
-      "long": "1.600",
-      "lat": "52.155",
-      "cameras": [
-        {
-          "name": "Aldeburgh Beach Lookout Tower",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Bredfield",
-      "long": "1.313",
-      "lat": "52.130",
-        "cameras": [
-            {
-            "name": "Bredfield near Woodbridge",
-            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-            }
-        ]
-    },
-    {
-      "name": "Felixstowe",
-      "long": "1.351",
-      "lat": "51.961",
-      "cameras": [
-        {
-          "name": "Felixstowe Pier",
-            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Ipswich",
-      "long": "1.148",
-      "lat": "52.056",
-      "cameras": [
-        {
-          "name": "Ipswich Marina",
-            "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        },
-        {
-          "name": "Salthouse Harbour Hotel",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Oulton",
-      "long": "1.704",
-      "lat": "52.470",
-      "cameras": [
-        {
-          "name": "Oulton Broad",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Lowestoft",
-      "long": "1.753",
-      "lat": "52.481",
-      "cameras": [
-        {
-          "name": "Lowestoft Pier",
-          "url": "http://www.broads-authority.gov.uk/__data/assets/image/0004/1020/Potter-Heigham.jpg"
-        }
-      ]
-    }
-  ]
+	"cameras": [
+		{
+			"name": "Potter Heigham",
+			"long": "1.5733",
+			"lat": "52.7228",
+			"cameras": [
+				{
+					"name": "Potter Heigham Bridge",
+					"url": "https://www.herbertwoods.co.uk/norfolk-broads/webcam/"
+				}
+			]
+		},
+		{
+			"name": "Hunstanton Sailing Club",
+			"long": "0.491",
+			"lat": "52.9389",
+			"cameras": [
+				{
+					"name": "Hunstanton Sailing Club"
+				}
+			]
+		},
+		{
+			"name": "Horning",
+			"long": "1.4643",
+			"lat": "52.7045",
+			"cameras": [
+				{
+					"name": "Norfolk River Cottages",
+					"url": "https://norfolkrivercottages.co.uk/rivercam1.html"
+				}
+			]
+		},
+		{
+			"name": "Ranworth Broad Cameras",
+			"long": "1.4867",
+			"lat": "52.6786",
+			"cameras": [
+				{
+					"name": "Ranworth Broad",
+					"url": "https://www.norfolkwildlifetrust.org.uk/wildlife-in-norfolk/wildlife-cameras/ranworth-broad-cameras"
+				}
+			]
+		},
+		{
+			"name": "Hickling",
+			"long": "1.5755",
+			"lat": "52.7624",
+			"cameras": [
+				{
+					"name": "Hickling Broad",
+					"url": "https://www.norfolkwildlifetrust.org.uk/wildlife-in-norfolk/wildlife-cameras/hickling-broad-cameras"
+				}
+			]
+		},
+		{
+			"name": "Weeting Heath",
+			"long": "0.6095",
+			"lat": "52.4686",
+			"cameras": [
+				{
+					"name": "Weeting Heath",
+					"url": "https://www.norfolkwildlifetrust.org.uk/wildlife-in-norfolk/wildlife-cameras/weeting-heath-cameras"
+				}
+			]
+		},
+		{
+			"name": "River Yare Brundall",
+			"long": "1.4365",
+			"lat": "52.6240",
+			"cameras": [
+				{
+					"name": "River Yare Brundall"
+				}
+			]
+		},
+		{
+			"name": "Wroxham Broad",
+			"long": "1.4073",
+			"lat": "52.7043",
+			"cameras": [
+				{
+					"name": "Barnes Brinkcraft",
+					"url": "https://www.barnesbrinkcraft.co.uk/webcam/"
+				}
+			]
+		},
+		{
+			"name": "Great Yarmouth",
+			"long": "1.7280",
+			"lat": "52.5982",
+			"cameras": [
+				{
+					"name": "Yarmouth Marine Parade Seafront",
+					"url": "https://www.visitgreatyarmouth.co.uk/visitor-information/great-yarmouth-webcams"
+				}
+			]
+		},
+		{
+			"name": "Blakeney",
+			"long": "1.0144",
+			"lat": "52.9537",
+			"cameras": [
+				{
+					"name": "Blakeney Quay",
+					"url": "https://blakeneyharbourassociation.co.uk/webcams"
+				}
+			]
+		},
+		{
+			"name": "Cley",
+			"long": "1.0427",
+			"lat": "52.9531",
+			"cameras": [
+				{
+					"name": "Cley Marshes",
+					"url": "https://www.norfolkwildlifetrust.org.uk/wildlife-in-norfolk/wildlife-cameras/cley-marshes-cameras"
+				}
+			]
+		},
+		{
+			"name": "Cromer",
+			"long": "1.3019",
+			"lat": "52.9314",
+			"cameras": [
+				{
+					"name": "Cromer Beach",
+					"url": "https://glidesurfschool.co.uk/3-day-lesson-forecast-live-webcam/"
+				}
+			]
+		},
+		{
+			"name": "Mundesley",
+			"long": "1.4332",
+			"lat": "52.8754",
+			"cameras": [
+				{
+					"name": "Mundesley",
+					"url": "https://mundesleylifeboat.co.uk/"
+				}
+			]
+		},
+		{
+			"name": "Sheringham",
+			"long": "1.2110",
+			"lat": "52.9444",
+			"cameras": [
+				{
+					"name": "Sheringham Beach",
+					"url": "https://www.iplivecams.com/live-cams/sheringham-norfolk-united-kingdom/"
+				}
+			]
+		},
+		{
+			"name": "Wells-next-the-Sea",
+			"long": "0.8489",
+			"lat": "52.9546",
+			"cameras": [
+				{
+					"name": "Wells-next-the-Sea",
+					"url": "https://www.wellsharbour.co.uk/webcam/"
+				}
+			]
+		},
+		{
+			"name": "Brancaster",
+			"long": "0.6389",
+			"lat": "52.9624",
+			"cameras": [
+				{
+					"name": "Brancaster Sailing Club",
+					"url": "https://www.bssc.net/clubhouse/webcam"
+				}
+			]
+		},
+		{
+			"name": "Hunstanton",
+			"long": "0.4910",
+			"lat": "52.9389",
+			"cameras": [
+				{
+					"name": "Hunstanton Sea View",
+					"url": "https://www.hunstantonsailingclub.co.uk/webcam/"
+				},
+				{
+					"name": "Hunstanton Promanade",
+					"url": "https://hunstanton.webcam/south-prom"
+				},
+				{
+					"name": "The Green Hunstanton",
+					"url": "https://hunstanton.webcam/the-green"
+				}
+			]
+		},
+		{
+			"name": "King's Lynn",
+			"long": "0.4023",
+			"lat": "52.7517",
+			"cameras": [
+				{
+					"name": "King's Lynn Pontoon"
+				}
+			]
+		},
+		{
+			"name": "Burnham Overy Staithe",
+			"long": "0.7442",
+			"lat": "52.9636",
+			"cameras": [
+				{
+					"name": "Burnham Overy Staithe-East",
+					"url": "https://www.burnhamoveryboathouse.co.uk/webcam-east"
+				},
+				{
+					"name": "Burnham Overy Staithe-West",
+					"url": "https://www.burnhamoveryboathouse.co.uk/webcam-west"
+				}
+			]
+		},
+		{
+			"name": "Aldeburgh",
+			"long": "1.600",
+			"lat": "52.155",
+			"cameras": [
+				{
+					"name": "Aldeburgh Beach Lookout Tower",
+					"url": "https://www.aldeburghlifeboat.org.uk/live-webcam"
+				}
+			]
+		},
+		{
+			"name": "Bredfield",
+			"long": "1.313",
+			"lat": "52.130",
+			"cameras": [
+				{
+					"name": "Bredfield near Woodbridge",
+					"url": "https://www.bredfield.org.uk/weather/cam.htm"
+				}
+			]
+		},
+		{
+			"name": "Felixstowe",
+			"long": "1.351",
+			"lat": "51.961",
+			"cameras": [
+				{
+					"name": "Felixstowe Pier",
+					"url": "https://coastwatch-felixstowe.co.uk/New/webcams.html"
+				}
+			]
+		},
+		{
+			"name": "Ipswich",
+			"long": "1.148",
+			"lat": "52.056",
+			"cameras": [
+				{
+					"name": "Ipswich Marina",
+					"url": "https://www.neptune-marina.com/live-cam/"
+				},
+				{
+					"name": "Salthouse Harbour Hotel"
+				}
+			]
+		},
+		{
+			"name": "Oulton",
+			"long": "1.704",
+			"lat": "52.470",
+			"cameras": [
+				{
+					"name": "Oulton Broad"
+				}
+			]
+		},
+		{
+			"name": "Lowestoft",
+			"long": "1.753",
+			"lat": "52.481",
+			"cameras": [
+				{
+					"name": "Lowestoft Pier",
+					"url": "https://rnsyc.net/wordpress/webcam/"
+				}
+			]
+		}
+	]
 }

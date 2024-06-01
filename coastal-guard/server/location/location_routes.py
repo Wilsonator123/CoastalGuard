@@ -26,7 +26,8 @@ def get_cameras():
         data = fileHandler.read_file('camera', './webcams/', '.json')
         camera_list = data['cameras']
         cameras = sort_by_distance(camera_list, target)
+        cameras = [x for x in cameras if x['distance'] <= request.args.get('radius', 10)]
         return cameras
     except Exception as e:
+        print(e)
         return abort(500, 'Error getting cameras')
-
