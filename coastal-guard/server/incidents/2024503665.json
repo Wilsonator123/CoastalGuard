@@ -1,7 +1,10 @@
 {
     "gin": "2024503665",
     "link": "https://hmcg-tasking.onmats.com/w/webpage/incident-responder-summary?context_record_id=43318425&webpage_token=fb6ab14f317e28291cc364e684f92812a46f9c5ce94792a10518b95202780ca3",
-    "team": "HBKCRT",
+    "team": [
+        "HBKCRT",
+        "FXCRT"
+    ],
     "type": "MEDIVAC",
     "date": "Fri, 09 Feb 2024 15:14 UTC",
     "location": "HLS IPSWICH HOSPITAL",
@@ -11,7 +14,7 @@
     "casualty": "MEDIVAC FROM R163",
     "sent": "Fri, 09 Feb 2024 15:17 UTC",
     "created_at": "2024-03-31 17:32:28.458359",
-    "last_updated": "2024-03-31 17:32:29.255186",
+    "last_updated": "2024-04-19 09:37:41.901904",
     "lat": 52.054528551659914,
     "lon": 1.201240454304422,
     "address": {
@@ -26,5 +29,97 @@
         "country": "United Kingdom",
         "country_code": "gb"
     },
-    "w3w": "eagles.thin.baking"
+    "w3w": "eagles.thin.baking",
+    "responders": [
+        {
+            "Response Record Id": "Felixstowe CRT"
+        },
+        {
+            "Response Record Id": "43319103",
+            "Callsign": "05",
+            "Response Code": "2",
+            "Response Code (T)": "To Station - 2",
+            "SOS": "",
+            "OIC Qualified": "No",
+            "L&MPS": "TECH",
+            "Mud": "OPS",
+            "Rope": "-",
+            "ORPOI": "Y",
+            "Off-road": "-",
+            "BCP": "-"
+        },
+        {
+            "Response Record Id": "43319105",
+            "Callsign": "03",
+            "Response Code": "2",
+            "Response Code (T)": "To Station - 2",
+            "SOS": "",
+            "OIC Qualified": "No",
+            "L&MPS": "TECH",
+            "Mud": "TECH",
+            "Rope": "-",
+            "ORPOI": "Y",
+            "Off-road": "-",
+            "BCP": "-"
+        },
+        {
+            "Response Record Id": "Holbrook CRT"
+        },
+        {
+            "Response Record Id": "43318421",
+            "Callsign": "07",
+            "Response Code": "5",
+            "Response Code (T)": "Not Attending - 5",
+            "SOS": "",
+            "OIC Qualified": "No",
+            "L&MPS": "TECH",
+            "Mud": "OPS",
+            "Rope": "-",
+            "ORPOI": "Y",
+            "Off-road": "-",
+            "BCP": "-"
+        },
+        {
+            "Response Record Id": "43318423",
+            "Callsign": "09",
+            "Response Code": "5",
+            "Response Code (T)": "Not Attending - 5",
+            "SOS": "",
+            "OIC Qualified": "No",
+            "L&MPS": "TECH",
+            "Mud": "-",
+            "Rope": "-",
+            "ORPOI": "Y",
+            "Off-road": "-",
+            "BCP": "-"
+        },
+        {
+            "Response Record Id": "43318417",
+            "Callsign": "04",
+            "Response Code": "2",
+            "Response Code (T)": "To Station - 2",
+            "SOS": "",
+            "OIC Qualified": "Yes",
+            "L&MPS": "T/L",
+            "Mud": "-",
+            "Rope": "-",
+            "ORPOI": "Y",
+            "Off-road": "-",
+            "BCP": "-"
+        },
+        {
+            "Response Record Id": "43318425",
+            "Callsign": "A",
+            "Response Code": "2",
+            "Response Code (T)": "To Station - 2",
+            "SOS": "",
+            "OIC Qualified": "No",
+            "L&MPS": "T/L",
+            "Mud": "-",
+            "Rope": "-",
+            "ORPOI": "Y",
+            "Off-road": "-",
+            "BCP": "-"
+        }
+    ]
 }

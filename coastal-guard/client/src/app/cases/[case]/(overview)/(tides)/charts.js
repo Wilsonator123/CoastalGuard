@@ -99,7 +99,7 @@ const TideChart = ({ data }) => {
 
 	return (
 		<div className="w-[100 %] h-[145px]">
-			<canvas ref={chartRef}></canvas>;
+			<canvas ref={chartRef}></canvas>
 		</div>
 	);
 };

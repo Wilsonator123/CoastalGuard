@@ -55,15 +55,13 @@ def compare_distance(loc, target):
         pass
 
 
+def add_distance(locations, target):
+    for loc in locations:
+        loc['distance'] = compare_distance(loc, target)
+    return locations
 
-def sort_by_distance(locations, target, number=5):
-    """_summary_
-
-    Args:
-        locations (_type_): List of objects with a 'lat' and 'long' keys
-        target (_type_): a tuple of (lat, long) target
-        number (_type_): Number of objects to return
-    Returns:
-        _type_: Sorted list of objects by distance from target in miles
-    """
-    return sorted(locations, key=lambda x: (compare_distance(x, target) if x else None))[:number]
+def sort_by_distance(locations, target):
+    for loc in locations:
+        loc['distance'] = compare_distance(loc, target)
+        
+    return sorted(locations, key=lambda x: x['distance'])
