@@ -54,6 +54,7 @@ def compare_distance(loc, target):
     except:
         pass
 
+
 def add_distance(locations, target):
     for loc in locations:
         loc['distance'] = compare_distance(loc, target)
