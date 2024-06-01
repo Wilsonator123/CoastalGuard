@@ -9,6 +9,8 @@ import subprocess
 import fileHandler
 from weather_api.weather_routes import weather
 from location.location_routes import locations
+from account.account_routes import account
+from weather_api import tides
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True, origins=['http://localhost:3000'])

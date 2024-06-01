@@ -9,7 +9,6 @@ from server.location.location import set_location
 from server.web_scraper import scrape_page
 from server.database import app as database
 
-
 class EmailReader:
     data = {}
     gin = None

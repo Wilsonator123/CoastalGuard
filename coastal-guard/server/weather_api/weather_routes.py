@@ -4,6 +4,7 @@ from flask import request
 import os
 from dotenv import load_dotenv
 import time
+from datetime import datetime
 from pathlib import Path
 import json
 from marshmallow import (
@@ -13,12 +14,13 @@ from marshmallow import (
     pre_load,
     validate,
 )
+from weather_api.tides import get_tides
 
 # Schemas
 
 class WeatherRequest(Schema):
-    lat = fields.Float(required=True)
-    lon = fields.Float(required=True)
+    lat = fields.String(required=True)
+    lon = fields.String(required=True)
 
 class WeatherResponse(Schema):
     date = fields.String(required=True)
@@ -51,8 +53,58 @@ class WeatherResponse(Schema):
         ],
         data["temp"] = round(data["current"]["temp"])
 
+class Station(Schema):
+    name = fields.String(required=True)
+    lat = fields.Float(required=True)
+    lon = fields.Float(required=True)
+    
+    @pre_load
+    def filter_station(self, data, **kwargs):
+        data = {
+            "lon": data["lon"],
+            "name": data["name"],
+            "lat": data["lat"],
+        }
+        return data
+    
+class TidesRequest(Schema):
+    lat = fields.Float(required=True)
+    lon = fields.Float(required=True)
+    
+    @pre_load
+    def filter_location(self, data, **kwargs):
+        data = {
+            "lat": float(data["lat"]),
+            "lon": float(data["lon"]),
+        }
+        return data
+    
+class TidesResponse(Schema):
+    data = fields.List(fields.Dict(), required=True, error_message="Data is required")
+    station = fields.Nested(Station, required=True, error_message="Station is required")
+    
+    @pre_load
+    def filter_tides(self, data, **kwargs):
+        
+        data['data'] = [{
+            "type": "High" if item["EventType"] == "HighWater" else "Low",
+            "date": item["DateTime"] if item.get("DateTime") else item["Date"],
+            "height": item["Height"],
+        } for item in data["data"]]
+        data['station'] = {
+            "name": data["station"]["properties"]["Name"],
+            "lat": data["station"]["lat"],
+            "lon": data["station"]["long"],
+        }
+    
+
+        
+        return data
+
 weather_request = WeatherRequest()
 weather_response = WeatherResponse()
+tides_request = TidesRequest()
+tides_response = TidesResponse()
 
 load_dotenv()
 
@@ -84,7 +136,7 @@ def get_weather():
 
 
 def filter_weather(response):
-    return weather_request.dumps({
+    return weather_response.loads({
         "date": response["current"]["dt"],
         "updated": response["current"]["dt"],
         "weather": response["current"]["weather"][0],
@@ -106,4 +158,16 @@ def filter_weather(response):
         "alerts": response.get("alerts"),
     })
 
-
+@weather.route('/get-tides', methods=['GET'])
+def tides():
+    try:
+        # location = tides_request.load(request.args)
+        # tides_data = get_tides(location["lat"], location["lon"])
+        # return tides_response.load(tides_data)
+    
+        with open("./weather_api/exampleTides.json", 'r') as file:
+                response = file.read()
+        return json.loads(response)
+    except ValidationError as error:
+        print(error)
+        return {"error": error.messages}, 400
