@@ -10,10 +10,11 @@ export default function Tides({ data }) {
 	const [weather, setWeather] = useState(null);
 
 	useEffect(() => {
-		fetchTides(data.lat, data.lon).then((data) => {
+		if (!data.lat || !data.lon) return;
+		fetchTides(data.lat, data.lon).then((tides) => {
 			fetchWeather(data.lat, data.lon).then((weather) => {
 				setWeather(weather);
-				setTides(data);
+				setTides(tides);
 				setLoading(false);
 			});
 		});

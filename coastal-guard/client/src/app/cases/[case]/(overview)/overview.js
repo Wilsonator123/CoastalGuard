@@ -1,8 +1,8 @@
 import Map from "./map";
 import CaseDetails from "./caseDetails";
-import WeatherWidgit from "./(weather)/weatherWidgit";
+import WeatherWidgit from "../../../../components/(weather)/weatherWidgit";
 import CameraWidgit from "./cameraWidgit";
-import TidesWidget from "./(tides)/tidesWidgit";
+import TidesWidget from "../../../../components/(tides)/tidesWidgit";
 import TeamWidgit from "./(team)/teamWidgit";
 
 const Page = ({ data }) => {
@@ -79,7 +79,7 @@ const Page = ({ data }) => {
 				</div>
 				<div className="flex flex-col w-[45%] mr-5 my-5 rounded-lg">
 					<div className="w-full h-1/3 border rounded-t-lg mb-5">
-						<WeatherWidgit data={data} />
+						<WeatherWidgit data={data} hours={6} />
 					</div>
 					<div className="w-full h-1/3 border mb-5">
 						<TidesWidget data={data} />
