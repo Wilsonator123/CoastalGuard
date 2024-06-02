@@ -68,6 +68,12 @@ export default function WeatherTitle({ data, night }) {
 					height={60}
 				/>
 			)}
+			{data.visibility <= 1000 && (
+				<div className="text-white font-bold text-xl absolute top-5 right-5 z-20">
+					<p>Low Visibility!</p>
+					<p>{data.visibility}m</p>
+				</div>
+			)}
 			{background(data.weather.main, night)}
 		</>
 	);

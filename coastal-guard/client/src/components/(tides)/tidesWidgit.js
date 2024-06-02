@@ -36,16 +36,19 @@ export default function Tides({ data }) {
 									? data.address.town
 									: data.address.city}
 							</h1>
-
 							<div
-								className={`absolute right-0 top-0`}
-								style={{
-									transform: weather?.wind_deg
-										? `rotate(${weather.wind_deg}deg)`
-										: undefined,
-								}}
+								className={`flex absolute right-0 top-1 text-white gap-2`}
 							>
-								<Arrow />
+								<div>{weather?.wind_speed}m/s</div>
+								<div
+									style={{
+										transform: weather?.wind_deg
+											? `rotate(${weather.wind_deg}deg)`
+											: undefined,
+									}}
+								>
+									<Arrow />
+								</div>
 							</div>
 						</div>
 						<div className="h-2/3  bg-secondary rounded-b-md">
