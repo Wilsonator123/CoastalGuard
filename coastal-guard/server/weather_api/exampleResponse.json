@@ -1,193 +1,193 @@
 {
 	"alerts": [],
-	"clouds": 14,
+	"clouds": 2,
 	"date": "Sun 02, Jun",
-	"day_temp": 15,
+	"day_temp": 13,
 	"hourly": [
 		{
-			"clouds": 14,
-			"hour": "14:00",
-			"temp": 18,
-			"visibility": 10000,
-			"weather": 801
-		},
-		{
-			"clouds": 20,
-			"hour": "15:00",
-			"temp": 17,
-			"visibility": 10000,
-			"weather": 801
-		},
-		{
-			"clouds": 26,
-			"hour": "16:00",
-			"temp": 16,
-			"visibility": 10000,
-			"weather": 802
-		},
-		{
-			"clouds": 39,
-			"hour": "17:00",
-			"temp": 15,
-			"visibility": 10000,
-			"weather": 802
-		},
-		{
-			"clouds": 43,
-			"hour": "18:00",
+			"clouds": 2,
+			"dt": 1717358400,
 			"temp": 14,
 			"visibility": 10000,
-			"weather": 802
+			"weather": 800
 		},
 		{
-			"clouds": 8,
-			"hour": "19:00",
+			"clouds": 2,
+			"dt": 1717362000,
 			"temp": 13,
 			"visibility": 10000,
 			"weather": 800
 		},
 		{
-			"clouds": 5,
-			"hour": "20:00",
-			"temp": 12,
+			"clouds": 2,
+			"dt": 1717365600,
+			"temp": 13,
 			"visibility": 10000,
 			"weather": 800
 		},
 		{
-			"clouds": 3,
-			"hour": "21:00",
-			"temp": 12,
-			"visibility": 10000,
-			"weather": 800
-		},
-		{
-			"clouds": 8,
-			"hour": "22:00",
-			"temp": 12,
+			"clouds": 2,
+			"dt": 1717369200,
+			"temp": 13,
 			"visibility": 10000,
 			"weather": 800
 		},
 		{
 			"clouds": 10,
-			"hour": "23:00",
+			"dt": 1717372800,
 			"temp": 12,
 			"visibility": 10000,
 			"weather": 800
 		},
 		{
-			"clouds": 20,
-			"hour": "00:00",
-			"temp": 12,
-			"visibility": 10000,
-			"weather": 801
-		},
-		{
-			"clouds": 100,
-			"hour": "01:00",
+			"clouds": 97,
+			"dt": 1717376400,
 			"temp": 12,
 			"visibility": 10000,
 			"weather": 804
 		},
 		{
-			"clouds": 100,
-			"hour": "02:00",
+			"clouds": 99,
+			"dt": 1717380000,
 			"temp": 12,
 			"visibility": 10000,
 			"weather": 804
 		},
 		{
 			"clouds": 100,
-			"hour": "03:00",
+			"dt": 1717383600,
+			"temp": 12,
+			"visibility": 10000,
+			"weather": 804
+		},
+		{
+			"clouds": 100,
+			"dt": 1717387200,
+			"temp": 12,
+			"visibility": 10000,
+			"weather": 804
+		},
+		{
+			"clouds": 100,
+			"dt": 1717390800,
 			"temp": 13,
 			"visibility": 10000,
 			"weather": 804
 		},
 		{
 			"clouds": 100,
-			"hour": "04:00",
+			"dt": 1717394400,
 			"temp": 13,
 			"visibility": 10000,
 			"weather": 804
 		},
 		{
 			"clouds": 100,
-			"hour": "05:00",
-			"temp": 13,
-			"visibility": 10000,
-			"weather": 804
-		},
-		{
-			"clouds": 100,
-			"hour": "06:00",
+			"dt": 1717398000,
 			"temp": 14,
 			"visibility": 10000,
 			"weather": 804
 		},
 		{
 			"clouds": 100,
-			"hour": "07:00",
+			"dt": 1717401600,
 			"temp": 14,
 			"visibility": 10000,
 			"weather": 804
 		},
 		{
 			"clouds": 100,
-			"hour": "08:00",
-			"temp": 14,
-			"visibility": 10000,
-			"weather": 804
-		},
-		{
-			"clouds": 100,
-			"hour": "09:00",
+			"dt": 1717405200,
 			"temp": 15,
 			"visibility": 10000,
 			"weather": 804
 		},
 		{
 			"clouds": 100,
-			"hour": "10:00",
-			"temp": 16,
+			"dt": 1717408800,
+			"temp": 15,
 			"visibility": 10000,
 			"weather": 804
 		},
 		{
 			"clouds": 100,
-			"hour": "11:00",
+			"dt": 1717412400,
 			"temp": 16,
 			"visibility": 10000,
 			"weather": 500
 		},
 		{
 			"clouds": 100,
-			"hour": "12:00",
+			"dt": 1717416000,
 			"temp": 16,
+			"visibility": 10000,
+			"weather": 500
+		},
+		{
+			"clouds": 100,
+			"dt": 1717419600,
+			"temp": 16,
+			"visibility": 10000,
+			"weather": 804
+		},
+		{
+			"clouds": 100,
+			"dt": 1717423200,
+			"temp": 15,
+			"visibility": 10000,
+			"weather": 804
+		},
+		{
+			"clouds": 100,
+			"dt": 1717426800,
+			"temp": 14,
+			"visibility": 10000,
+			"weather": 804
+		},
+		{
+			"clouds": 100,
+			"dt": 1717430400,
+			"temp": 14,
+			"visibility": 10000,
+			"weather": 804
+		},
+		{
+			"clouds": 100,
+			"dt": 1717434000,
+			"temp": 14,
+			"visibility": 10000,
+			"weather": 804
+		},
+		{
+			"clouds": 100,
+			"dt": 1717437600,
+			"temp": 14,
 			"visibility": 10000,
 			"weather": 804
 		}
 	],
-	"humidity": 72,
+	"humidity": 79,
 	"moon_phase": 0.85,
 	"moonrise": 1717291920,
 	"moonset": 1717340940,
-	"night_temp": 12,
+	"night_temp": 13,
 	"rain": 0.0,
 	"snow": 0.0,
 	"summary": "Expect a day of partly cloudy with clear spells",
 	"sunrise": 1717299431,
 	"sunset": 1717358738,
-	"temp": 18,
+	"temp": 14,
 	"total_rain": 0.0,
 	"total_snow": 0.0,
-	"updated": 1717335532,
-	"uvi": 4.68,
+	"updated": 1717357238,
+	"uvi": 0.0,
 	"visibility": 10000,
 	"weather": {
-		"description": "few clouds",
-		"icon": "02d",
-		"id": 801,
-		"main": "Clouds"
+		"description": "clear sky",
+		"icon": "01d",
+		"id": 800,
+		"main": "Clear"
 	},
-	"wind_deg": 31,
-	"wind_speed": 5.37
+	"wind_deg": 47,
+	"wind_speed": 2.6
 }
