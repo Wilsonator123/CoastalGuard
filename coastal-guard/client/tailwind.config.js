@@ -21,6 +21,7 @@ module.exports = {
 			contrast: "#000000",
 			error: "#ff1f1f",
 			errorText: "#cc0000",
+			green: "#0f9d58",
 		},
 		extend: {
 			fontFamily: {

@@ -26,7 +26,7 @@ const nightforecast = ({ weather }) => {
 
 	const moonPhase = (moonphase) => {
 		let phase;
-		console.log(moonphase);
+
 		if (moonphase < 0.125) phase = "New Moon";
 		else if (moonphase < 0.25) phase = "Waxing Crescent";
 		else if (moonphase == 0.25) phase = "First Quarter";
@@ -41,7 +41,7 @@ const nightforecast = ({ weather }) => {
 
 	const moonIcon = (moonphase) => {
 		let icon;
-		console.log(moonphase);
+
 		if (moonphase < 0.125)
 			return (
 				<Newmoon

@@ -1,9 +1,9 @@
-import Map from "./map";
-import CaseDetails from "./caseDetails";
-import WeatherWidgit from "../../../../components/(weather)/weatherWidgit";
+import Map from "@/components/map";
+import CaseDetails from "@/components/caseDetails";
+import WeatherWidgit from "@/components/(weather)/weatherWidgit";
 import CameraWidgit from "./cameraWidgit";
-import TidesWidget from "../../../../components/(tides)/tidesWidgit";
-import TeamWidgit from "./(team)/teamWidgit";
+import TidesWidget from "@/components/(tides)/tidesWidgit";
+import TeamWidgit from "@/components/(team)/teamWidgit";
 
 const Page = ({ data }) => {
 	const lastUpdated = (date) => {
