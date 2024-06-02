@@ -4,26 +4,31 @@ const SunnyBackground = require("@/assets/weather/SunnyBackground.png");
 const CloudyBackground = require("@/assets/weather/CloudyBackground.png");
 const RainyBackground = require("@/assets/weather/RainyBackground.png");
 const ClearBackground = require("@/assets/weather/ClearBackground.png");
+const NightBackground = require("@/assets/weather/NightBackground.png");
 // const StormyBackground = require('@/assets/weather/StormyBackground.png')
 // const SnowyBackground = require('@/assets/weather/SnowyBackground.png')
 import Sun from "@/assets/weather/icons/sun.svg";
 
-export default function WeatherTitle({ data }) {
-	const background = (weather) => {
+export default function WeatherTitle({ data, night }) {
+	const background = (weather, night) => {
 		let src;
-		switch (weather) {
-			case "Clear":
-				src = ClearBackground;
-				break;
-			case "Clouds":
-				src = CloudyBackground;
-				break;
-			case "Rain":
-				src = RainyBackground;
-				break;
-			case "Sunny":
-				src = SunnyBackground;
-				break;
+		if (night) {
+			src = NightBackground;
+		} else {
+			switch (weather) {
+				case "Clouds":
+					src = CloudyBackground;
+					break;
+				case "Rain":
+					src = RainyBackground;
+					break;
+				case "Sunny":
+					src = SunnyBackground;
+					break;
+				case "Clear":
+					src = ClearBackground;
+					break;
+			}
 		}
 		return (
 			<Image
@@ -63,7 +68,13 @@ export default function WeatherTitle({ data }) {
 					height={60}
 				/>
 			)}
-			{background(data.weather.main)}
+			{data.visibility <= 1000 && (
+				<div className="text-white font-bold text-xl absolute top-5 right-5 z-20">
+					<p>Low Visibility!</p>
+					<p>{data.visibility}m</p>
+				</div>
+			)}
+			{background(data.weather.main, night)}
 		</>
 	);
 }

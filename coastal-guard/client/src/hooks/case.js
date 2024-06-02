@@ -2,6 +2,8 @@
 export const fetchWeather = async (lat, lon) => {
 	"use server";
 	try {
+		if (!lat || !lon) return;
+
 		const res = await fetch(
 			process.env.API_URL + `/weather/get-weather?lat=${lat}&lon=${lon}`
 		);
