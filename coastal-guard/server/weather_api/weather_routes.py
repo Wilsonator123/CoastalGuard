@@ -89,7 +89,7 @@ class WeatherResponse(Schema):
         data['date'] = time.strftime("%a %d, %b", time.gmtime(data["date"]))
         data["hourly"] =[
             {
-                "hour": time.strftime("%H", time.gmtime(hour["dt"]))+':00', 
+                "dt": hour["dt"], 
                 "weather": hour["weather"][0]["id"],
                 "temp": round(hour["temp"]),
                 "visibility": hour["visibility"],

@@ -1,19 +1,19 @@
-<svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="20" cy="20" r="20" fill="url(#paint0_linear_201_263)"/>
+<svg width="29" height="25" viewBox="0 0 29 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="13" cy="13" rx="13" ry="12" fill="url(#paint0_linear_201_263)"/>
 <g filter="url(#filter0_f_201_263)">
-<circle cx="24.5" cy="17.5" r="12.5" fill="#F3F3F3" fill-opacity="0.8"/>
+<ellipse cx="15.925" cy="11.5" rx="8.125" ry="7.5" fill="#F3F3F3" fill-opacity="0.8"/>
 </g>
-<circle cx="25" cy="17" r="10" fill="#E8EBF0"/>
-<path d="M6.5 14L6.83677 15.0365H7.92658L7.04491 15.6771L7.38168 16.7135L6.5 16.0729L5.61832 16.7135L5.95509 15.6771L5.07342 15.0365H6.16323L6.5 14Z" fill="#E8EBF0"/>
-<path d="M14.5 27L14.8368 28.0365H15.9266L15.0449 28.6771L15.3817 29.7135L14.5 29.0729L13.6183 29.7135L13.9551 28.6771L13.0734 28.0365H14.1632L14.5 27Z" fill="#E8EBF0"/>
-<path d="M6.5 24L6.83677 25.0365H7.92658L7.04491 25.6771L7.38168 26.7135L6.5 26.0729L5.61832 26.7135L5.95509 25.6771L5.07342 25.0365H6.16323L6.5 24Z" fill="#E8EBF0"/>
+<ellipse cx="16.25" cy="11.2" rx="6.5" ry="6" fill="#E8EBF0"/>
+<path d="M4.225 9.39999L4.4439 10.0219H5.15228L4.57919 10.4062L4.79809 11.0281L4.225 10.6438L3.65191 11.0281L3.87081 10.4062L3.29772 10.0219H4.0061L4.225 9.39999Z" fill="#E8EBF0"/>
+<path d="M9.42501 17.2L9.64391 17.8219H10.3523L9.7792 18.2062L9.9981 18.8281L9.42501 18.4438L8.85192 18.8281L9.07082 18.2062L8.49773 17.8219H9.20611L9.42501 17.2Z" fill="#E8EBF0"/>
+<path d="M4.225 15.4L4.4439 16.0219H5.15228L4.57919 16.4062L4.79809 17.0281L4.225 16.6438L3.65191 17.0281L3.87081 16.4062L3.29772 16.0219H4.0061L4.225 15.4Z" fill="#E8EBF0"/>
 <defs>
-<filter id="filter0_f_201_263" x="8" y="1" width="33" height="33" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_f_201_263" x="3.79999" y="0" width="24.25" height="23" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_201_263"/>
 </filter>
-<linearGradient id="paint0_linear_201_263" x1="-2.83122e-07" y1="40" x2="43.2478" y2="35.8506" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_201_263" x1="-1.29278e-07" y1="13" x2="25.95" y2="11.8606" gradientUnits="userSpaceOnUse">
 <stop stop-color="#3D4584"/>
 <stop offset="1" stop-color="#1143DE"/>
 </linearGradient>
