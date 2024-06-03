@@ -11,14 +11,12 @@ export function DropDown() {
 	return (
 		<div className="select-none">
 			{user ? (
-				<div className="absolute bg-background flex flex-col gap-5 w-full py-3">
+				<div className="absolute bg-background flex flex-col gap-5 w-full py-3 z-40">
 					<button>Account</button>
-					<button className="" onClick={handleLogout}>
-						Logout
-					</button>
+					<button onClick={handleLogout}>Logout</button>
 				</div>
 			) : (
-				<div className="absolute bg-background flex flex-col gap-5 w-full py-3">
+				<div className="absolute bg-background flex flex-col gap-5 w-full py-3 z-40">
 					<a href="/login">Login</a>
 					<a href="/register">Register</a>
 				</div>

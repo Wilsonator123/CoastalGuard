@@ -39,16 +39,6 @@ export default function OptionList({ changePage, active }) {
 					Weather Details
 				</p>
 			</div>
-			<div
-				className={`flex items-center w-full h-12 ${isActive(
-					"socialMedia"
-				)}`}
-				onClick={() => changePage("socialMedia")}
-			>
-				<p className="text-background font-semibold text-2xl pl-2.5">
-					Social Media
-				</p>
-			</div>
 		</div>
 	);
 }

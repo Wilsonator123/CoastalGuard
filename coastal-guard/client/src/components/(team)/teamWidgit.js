@@ -1,9 +1,20 @@
 "use client";
+import Close from "@/assets/close.svg";
 
-export default function TeamWidgit({ data }) {
+export default function TeamWidgit({ data, position, edit, remove }) {
 	return (
-		<>
-			<div className="flex w-full h-full border-[#00000]/50 border-t flex-col p-2">
+		<div className="w-full h-full">
+			{edit && (
+				<button
+					onClick={() => {
+						remove(position);
+					}}
+					className="absolute top-[-7px] right-[-7px] bg-background z-20 rounded-full border hover:bg-secondary/90 cursor-pointer"
+				>
+					<Close width="20" height="20" />
+				</button>
+			)}
+			<div className="flex w-full h-full bg-accent border-[#00000]/50 border-t rounded-lg flex-col p-2">
 				<table className="border border-white w-full h-full items-center">
 					<thead className="flex flex-row w-full h-1/5">
 						<tr className="flex w-full text-center text-lg text-white items-center">
@@ -49,6 +60,6 @@ export default function TeamWidgit({ data }) {
 					</tbody>
 				</table>
 			</div>
-		</>
+		</div>
 	);
 }
