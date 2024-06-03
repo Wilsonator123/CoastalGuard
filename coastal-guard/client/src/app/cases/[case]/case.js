@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Overview from "./(overview)/overview";
 import Weather from "./(weather)/weather";
+import CaseDetails from "./(details)/details";
 import OptionList from "./optionList";
 export default function Page({ fetchData, params }) {
 	const [page, setPage] = useState("overview");
@@ -15,6 +16,8 @@ export default function Page({ fetchData, params }) {
 				return <Overview data={data} />;
 			case "weather":
 				return <Weather data={data} />;
+			case "details":
+				return <CaseDetails data={data} />;
 			default:
 				return <Overview data={data} />;
 		}

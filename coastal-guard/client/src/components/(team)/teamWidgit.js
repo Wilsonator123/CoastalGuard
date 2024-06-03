@@ -49,7 +49,6 @@ export default function TeamWidgit({ data }) {
 					</tbody>
 				</table>
 			</div>
-			)
 		</>
 	);
 }
