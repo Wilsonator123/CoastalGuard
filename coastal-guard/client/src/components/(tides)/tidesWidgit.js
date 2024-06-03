@@ -3,8 +3,9 @@ import { fetchTides, fetchWeather } from "@/hooks/case";
 import Charts from "./charts";
 const { DateTime } = require("luxon");
 import Arrow from "@/assets/arrow.svg";
+import Close from "@/assets/close.svg";
 
-export default function Tides({ data }) {
+export default function Tides({ data, position, edit, remove }) {
 	const [tides, setTides] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [weather, setWeather] = useState(null);
@@ -21,11 +22,21 @@ export default function Tides({ data }) {
 	}, []);
 
 	return (
-		<>
+		<div className="w-full h-full">
+			{edit && (
+				<button
+					onClick={() => {
+						remove(position);
+					}}
+					className="absolute top-[-7px] right-[-7px] bg-background z-20 rounded-full border hover:bg-secondary/90 cursor-pointer"
+				>
+					<Close width="20" height="20" />
+				</button>
+			)}
 			{loading ? (
 				<p>Loading...</p>
 			) : (
-				<div className="flex w-full h-full p-2 gap-2">
+				<div className="flex w-full h-full p-2 gap-2 border rounded-lg">
 					<div className="w-2/3 flex flex-col gap-2">
 						<div
 							id="header"
@@ -94,6 +105,6 @@ export default function Tides({ data }) {
 					</div>
 				</div>
 			)}
-		</>
+		</div>
 	);
 }

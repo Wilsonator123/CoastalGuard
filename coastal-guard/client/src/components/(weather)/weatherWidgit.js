@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import Forecast from "./forecast";
 import WeatherTitle from "./weatherTitle";
 import { fetchWeather } from "@/hooks/case";
-
-export default function WeatherWidgit({ data, hours }) {
+import Close from "@/assets/close.svg";
+export default function WeatherWidgit({ data, hours, edit, remove, position }) {
 	const [weather, setWeather] = useState(null);
 	const [loading, setLoading] = useState(true);
 
@@ -25,11 +25,21 @@ export default function WeatherWidgit({ data, hours }) {
 		return current >= sunsetHours;
 	};
 	return (
-		<>
+		<div className="w-full h-full">
+			{edit && (
+				<button
+					onClick={() => {
+						remove(position);
+					}}
+					className="absolute top-[-7px] right-[-7px] bg-background z-20 rounded-full border hover:bg-secondary/90 cursor-pointer"
+				>
+					<Close width="20" height="20" />
+				</button>
+			)}
 			{loading ? (
 				<p>Loading...</p>
 			) : (
-				<>
+				<div className="w-full h-full border rounded-lg">
 					<div className="h-2/3 relative flex items-center ">
 						<WeatherTitle
 							data={weather}
@@ -39,8 +49,8 @@ export default function WeatherWidgit({ data, hours }) {
 					<div className="h-1/3  bg-background rounded-b-md">
 						<Forecast data={weather} hours={hours} />
 					</div>
-				</>
+				</div>
 			)}
-		</>
+		</div>
 	);
 }

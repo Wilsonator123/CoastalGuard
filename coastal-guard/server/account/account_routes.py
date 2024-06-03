@@ -31,8 +31,14 @@ class RegisterRequest(Schema):
     first_name = fields.String(required=True)
     last_name = fields.String(required=True)
 
+    
+class SetLayoutRequest(Schema):
+    layout = fields.List(fields.String(), required=True)
+    
+
 login_request = LoginRequest()
 register_request = RegisterRequest()
+set_layout_request = SetLayoutRequest()
 
 db = Database()
 # Routes
@@ -90,3 +96,36 @@ def get_account():
         result['_id'] = str(result['_id'])
         del result['password']
         return result, 200
+    
+@account.route('/getLayout', methods=['GET'])
+def get_layout():
+    user_id = request.cookies.get('userID')
+    if user_id is None:
+        return {"error": "Not logged in"}, 401
+    
+    user_id = ObjectId(user_id)
+    result = db.read_file({'_id': user_id}, 'users')
+    if result is None:
+        return {"error": "User not found"}, 404
+    if 'layout' not in result:
+        return {"msg": "No Layout"}, 200
+    return result.get('layout'), 200
+
+
+@account.route('/setLayout', methods=['POST'])
+def set_layout():
+    try:
+        data = set_layout_request.load(request.get_json())
+        user_id = request.cookies.get('userID')
+        if user_id is None:
+            return {"error": "Not logged in"}, 401
+        else:
+            user_id = ObjectId(user_id)
+            
+            layout = data['layout']
+            result = db.write_to_file({'_id': user_id}, {'layout': layout}, 'users')
+            if result is None:
+                return {"error": "User not found"}, 404
+            return {"msg": "Layout set"}, 200
+    except ValidationError as e:
+        return {"error": list(e.messages.values())[0]}, 401
