@@ -51,12 +51,12 @@ export default function Map({ gridRef, lon, lat, w3w }) {
 
 	return (
 		<>
-			<div className="flex justify-center items-center w-full bg-primary h-[225px] relative">
+			<div className="flex justify-center items-center w-full h-[90%] bg-primary relative">
 				<MapContainer
 					center={[lat, lon]}
 					zoom={12}
 					scrollWheelZoom={false}
-					style={{ height: "225px", width: "100%", zIndex: 0 }}
+					style={{ height: "100%", width: "100%", zIndex: 0 }}
 				>
 					<TileLayer
 						attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -70,6 +70,7 @@ export default function Map({ gridRef, lon, lat, w3w }) {
 						</Popup>
 					</Marker>
 				</MapContainer>
+
 				{distance && (
 					<div
 						className="absolute top-2 right-2 p-2 bg-white rounded font-bold "

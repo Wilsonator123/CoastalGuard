@@ -18,9 +18,16 @@ const nightforecast = ({ weather }) => {
 	const [midnight, setMidnight] = useState(null);
 
 	const getMidnight = (hourly, moonrise) => {
-		const date = DateTime.fromSeconds(moonrise);
-		moonrise = date.plus({ hours: 1 }).toFormat("HH" + ":00");
-		const midnight = hourly.find((hour) => hour.hour == moonrise);
+		moonrise = DateTime.fromSeconds(moonrise);
+		const afterMid = hourly.filter((hour) => {
+			const dt = DateTime.fromSeconds(hour.dt);
+			return dt > moonrise;
+		});
+
+		const mid = afterMid.length / 2;
+
+		const midnight = afterMid[mid];
+
 		setMidnight(midnight);
 	};
 
@@ -117,8 +124,8 @@ const nightforecast = ({ weather }) => {
 	};
 
 	useEffect(() => {
-		if (!weather.hourly || !weather.moonrise) return;
-		getMidnight(weather.hourly, weather.moonrise);
+		if (!weather.hourly || !weather.sunset) return;
+		getMidnight(weather.hourly, weather.sunset);
 	}, [weather]);
 
 	return (

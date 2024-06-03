@@ -1,10 +1,13 @@
-import Map from "@/components/map";
 import CaseDetails from "@/components/caseDetails";
 import WeatherWidgit from "@/components/(weather)/weatherWidgit";
 import CameraWidgit from "./cameraWidgit";
 import TidesWidget from "@/components/(tides)/tidesWidgit";
 import TeamWidgit from "@/components/(team)/teamWidgit";
+import dynamic from "next/dynamic";
 
+const DynamicComponentWithNoSSR = dynamic(() => import("@/components/map"), {
+	ssr: false,
+});
 const Page = ({ data }) => {
 	const lastUpdated = (date) => {
 		const currentDate = new Date();
@@ -60,11 +63,11 @@ const Page = ({ data }) => {
 							<CaseDetails data={data} />
 						</div>
 					</div>
-					<div className="relative">
-						<Map
-							gridRef={data.gridRef}
+					<div className="relative h-[255px] w-full">
+						<DynamicComponentWithNoSSR
 							lat={data.lat}
 							lon={data.lon}
+							gridRef={data.gridRef}
 							w3w={data.w3w}
 						/>
 					</div>
