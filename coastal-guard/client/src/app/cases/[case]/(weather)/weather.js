@@ -45,7 +45,7 @@ const Weather = ({ data }) => {
 							<Forecast data={weather} hours={12} />
 						</div>
 						<div className="row-start-2 col-start-1 row-span-1 col-span-4 relative z-10">
-							<WeatherTitle data={weather} />
+							<WeatherTitle data={data} weather={weather} />
 						</div>
 						<div className="row-start-2 col-start-1 col-span-4 z-30 text-white text-3xl font-bold">
 							<div className="flex flex-row z-30 ml-5 w-full h-full items-center">
@@ -68,7 +68,11 @@ const Weather = ({ data }) => {
 						</div>
 						<Dayforecast weather={weather} />
 						<div className="row-start-2 col-start-5 row-span-1 col-span-4 relative z-10">
-							<WeatherTitle data={weather} night={true} />
+							<WeatherTitle
+								data={data}
+								weather={weather}
+								night={true}
+							/>
 						</div>
 						<div className="row-start-2 col-start-5 col-span-4 z-30 text-white text-3xl font-bold">
 							<div className="flex flex-row z-30 ml-5 w-full h-full items-center">
