@@ -42,7 +42,8 @@ export default function CaseDetails({ data }) {
 					</div>
 					<div>
 						<p className="text-xl font-bold">
-							Last Updated: {lastUpdated(data.last_updated)}
+							Last Updated:{" "}
+							{lastUpdated(data.last_updated ?? data.created_at)}
 						</p>
 					</div>
 				</div>

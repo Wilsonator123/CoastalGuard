@@ -98,7 +98,7 @@ const TideChart = ({ data }) => {
 	}, [data]);
 
 	return (
-		<div className="w-[100 %] h-[145px]">
+		<div className="w-[100%] h-[145px] flex items-center justify-center">
 			<canvas ref={chartRef}></canvas>
 		</div>
 	);

@@ -78,7 +78,7 @@ export default function LoginForm() {
 					</div>
 					<button
 						type="submit"
-						className="my-1 p-2 bg-primary text-white text-xl rounded-2xl hover:brightness-[.9]"
+						className="my-1 p-2 bg-primary border text-white text-xl rounded-2xl hover:brightness-[.9]"
 					>
 						Log In
 					</button>
@@ -89,7 +89,7 @@ export default function LoginForm() {
 				<div className="flex flex-col px-10">
 					<button
 						onClick={() => router.push("/register")}
-						className="my-1 p-2 bg-secondary text-text text-xl rounded-2xl hover:brightness-[.9] border"
+						className="my-1 p-2 bg-button text-text text-xl rounded-2xl hover:brightness-[.9] border"
 					>
 						Sign Up
 					</button>

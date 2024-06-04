@@ -3,6 +3,7 @@ import { fetchWeather } from "@/hooks/case";
 import WeatherTitle from "@/components/(weather)/weatherTitle";
 import Forecast from "@/components/(weather)/forecast";
 import Dayforecast from "./dayforecast";
+import TidesWidgit from "@/components/(tides)/tidesWidgit";
 import Nightforecast from "./nightforecast";
 const Weather = ({ data }) => {
 	const [weather, setWeather] = useState(null);
@@ -39,11 +40,10 @@ const Weather = ({ data }) => {
 						</div>
 					)}
 
-					<div className="grid grid-cols-8 grid-rows-7 w-full h-full relative gap-2">
+					<div className="grid grid-cols-8 grid-rows-8 w-full h-[1100px] relative gap-2">
 						<div className="row-start-1 col-start-2 col-span-6 border m-2">
 							<Forecast data={weather} hours={12} />
 						</div>
-
 						<div className="row-start-2 col-start-1 row-span-1 col-span-4 relative z-10">
 							<WeatherTitle data={weather} />
 						</div>
@@ -66,7 +66,6 @@ const Weather = ({ data }) => {
 								</div>
 							</div>
 						</div>
-
 						<Dayforecast weather={weather} />
 						<div className="row-start-2 col-start-5 row-span-1 col-span-4 relative z-10">
 							<WeatherTitle data={weather} night={true} />
@@ -91,6 +90,9 @@ const Weather = ({ data }) => {
 							</div>
 						</div>
 						<Nightforecast weather={weather} />
+						<div className="row-start-7 col-start-5 col-span-4 row-span-2 p-1">
+							<TidesWidgit data={data} />
+						</div>
 					</div>
 				</div>
 			)}

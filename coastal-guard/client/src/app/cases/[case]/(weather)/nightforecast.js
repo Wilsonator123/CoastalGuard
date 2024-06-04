@@ -54,7 +54,7 @@ const nightforecast = ({ weather }) => {
 				<Newmoon
 					width={"85"}
 					height={"85"}
-					className="absolute top-3 right-20 z-20"
+					className="absolute top-[50px] right-[95px] z-20"
 				/>
 			);
 		else if (moonphase < 0.25)
@@ -62,7 +62,7 @@ const nightforecast = ({ weather }) => {
 				<Waxingcrescent
 					width={"85"}
 					height={"85"}
-					className="absolute top-3 right-20 z-20"
+					className="absolute top-[50px] right-[95px] z-20"
 				/>
 			);
 		else if (moonphase == 0.25)
@@ -70,7 +70,7 @@ const nightforecast = ({ weather }) => {
 				<Firstquarter
 					width={"85"}
 					height={"85"}
-					className="absolute top-3 right-20 z-20"
+					className="absolute top-[50px] right-[95px] z-20"
 				/>
 			);
 		else if (moonphase < 0.5)
@@ -78,7 +78,7 @@ const nightforecast = ({ weather }) => {
 				<Waxinggibbous
 					width={"85"}
 					height={"85"}
-					className="absolute top-3 right-20 z-20"
+					className="absolute top-[50px] right-[95px] z-20"
 				/>
 			);
 		else if (moonphase == 0.5)
@@ -86,7 +86,7 @@ const nightforecast = ({ weather }) => {
 				<Fullmoon
 					width={"85"}
 					height={"85"}
-					className="absolute top-3 right-20 z-20"
+					className="absolute top-[50px] right-[95px] z-20"
 				/>
 			);
 		else if (moonphase < 0.75)
@@ -94,7 +94,7 @@ const nightforecast = ({ weather }) => {
 				<Waninggibbous
 					width={"85"}
 					height={"85"}
-					className="absolute top-3 right-20 z-20"
+					className="absolute top-[50px] right-[95px] z-20"
 				/>
 			);
 		else if (moonphase == 0.75)
@@ -102,7 +102,7 @@ const nightforecast = ({ weather }) => {
 				<Lastquarter
 					width={"85"}
 					height={"85"}
-					className="absolute top-3 right-20 z-20"
+					className="absolute top-[50px] right-[95px] z-20"
 				/>
 			);
 		else if (moonphase < 0.87)
@@ -110,7 +110,7 @@ const nightforecast = ({ weather }) => {
 				<Waningcrescent
 					width={"85"}
 					height={"85"}
-					className="absolute top-3 right-20 z-20"
+					className="absolute top-[50px] right-[95px] z-20"
 				/>
 			);
 		else
@@ -118,7 +118,7 @@ const nightforecast = ({ weather }) => {
 				<Newmoon
 					width={"85"}
 					height={"85"}
-					className="absolute top-3 right-20 z-20"
+					className="absolute top-[50px] right-[95px] z-20"
 				/>
 			);
 	};
@@ -129,8 +129,8 @@ const nightforecast = ({ weather }) => {
 	}, [weather]);
 
 	return (
-		<div className="row-start-3 col-start-5 col-span-4 row-span-5  flex flex-col gap-2 p-1 h-full">
-			<div className="grid grid-cols-2 grid-rows-2 w-full h-1/3 border p-1 text-lg items-center">
+		<div className="row-start-3 col-start-5 col-span-4 row-span-6  flex flex-col gap-2 p-1 h-2/3">
+			<div className="grid grid-cols-2 grid-rows-2 w-full h-1/2 border p-1 text-lg items-center">
 				<div className="flex flex-col items-center justify-center border-b w-full h-full">
 					<div className="flex">
 						<Moonset fill={"#154975"} />
@@ -160,7 +160,7 @@ const nightforecast = ({ weather }) => {
 					<p className="font-bold">{midnight?.visibility} m</p>
 				</div>
 			</div>
-			<div className="w-full h-1/3 border p-1 text-lg items-center">
+			<div className="w-full h-1/2 border p-1 text-lg items-center">
 				<div className="flex items-center w-full h-full justify-center">
 					<div className="flex-1 flex flex-col text-center text-2xl font-bold">
 						<p>{moonPhase(weather.moon_phase)}</p>
