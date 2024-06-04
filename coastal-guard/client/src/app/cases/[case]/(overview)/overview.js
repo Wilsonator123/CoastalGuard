@@ -168,7 +168,7 @@ const Page = ({ data }) => {
 								</button>
 								<button
 									onClick={() => saveLayout()}
-									className="h-[45px] w-[100px] bg-primary text-white text-xl font-semibold rounded mr-5"
+									className="h-[45px] w-[100px] bg-button text-white text-xl font-semibold rounded mr-5"
 								>
 									Save
 								</button>
@@ -177,7 +177,7 @@ const Page = ({ data }) => {
 							<div>
 								<button
 									onClick={() => toggleEdit(true)}
-									className="w-[100px] h-[45px] bg-primary text-white text-xl font-semibold rounded mr-5"
+									className="w-[100px] h-[45px] bg-button text-white text-xl font-semibold rounded mr-5"
 								>
 									Edit
 								</button>

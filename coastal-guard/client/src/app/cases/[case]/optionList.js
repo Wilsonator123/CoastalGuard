@@ -2,7 +2,7 @@
 
 export default function OptionList({ changePage, active }) {
 	const isActive = (page) => {
-		return page == active ? "bg-primary" : "bg-accent";
+		return page == active ? "bg-button" : "bg-accent";
 	};
 
 	return (
