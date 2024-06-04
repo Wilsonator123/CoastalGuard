@@ -10,11 +10,17 @@ from mailReader import EmailReader
 
 def main():
     try:
+        print("Starting email reader...")
+        
+        print("Authenticating...")
         service = authenticate()
 
+        print("Checking inbox...")
         messages = check_inbox(service)
 
+        print("New Emails: ", len(messages))
         for message in messages:
+            print("Reading email...")
             message = get_message(service, message["id"])
             EmailReader().read_mail(message)
             mark_as_read(service, message["id"])

@@ -35,7 +35,7 @@ const TideChart = ({ data }) => {
 	useEffect(() => {
 		const ctx = chartRef.current.getContext("2d");
 
-		const labels = data.map((item) => new Date(item.time));
+		const labels = data.map((item) => new Date(item.date));
 
 		const heights = data.map((item) => item.height);
 

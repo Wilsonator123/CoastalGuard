@@ -78,7 +78,7 @@ export default function Tides({ data, position, edit, remove }) {
 								UTC
 							</h1>
 						</div>
-						<div className="flex w-full h-full border-[#00000]/50 border-t flex-col p-2 ">
+						<div className="flex w-full h-full border-[#00000]/50 border-t flex-col p-2 overflow-y-auto no-scrollbar">
 							<table className="border w-full h-full">
 								<thead>
 									<tr>
@@ -87,13 +87,16 @@ export default function Tides({ data, position, edit, remove }) {
 										<th>Height</th>
 									</tr>
 								</thead>
-								<tbody>
+								<tbody className="h-full w-full ">
 									{tides.data.map((tide, i) => (
-										<tr key={i}>
+										<tr
+											key={i}
+											className="text-lg h-[40px] text-center"
+										>
 											<td>{tide.type}</td>
 											<td>
 												{DateTime.fromISO(
-													tide.time
+													tide.date
 												).toFormat("HH:mm")}
 											</td>
 											<td>{tide.height.toFixed(2)}m</td>
