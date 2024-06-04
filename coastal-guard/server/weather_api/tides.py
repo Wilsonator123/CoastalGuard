@@ -12,26 +12,29 @@ def get_closest_tide_station(lat, lon):
     with open("./weather_api/station_list.json", 'r') as file:
         data = json.load(file)
       
-    closest_station = sort_by_distance(data, (lat, lon), 1)
+    closest_station = sort_by_distance(data, (lat, lon))
     return closest_station
 
 def get_tides(lat, lon):
     # Get the current date
-    station = get_closest_tide_station(lat, lon)
-    station_id = station[0]['properties']['Id']
-    url = os.getenv("TIDES_URL") + f"/{station_id}/TidalEvents?duration=2"
-    # Get the tide data for the current date
-    response = requests.get(url,
-      headers = {
-        'Ocp-Apim-Subscription-Key': os.getenv("TIDE_API_KEY")
-      },
-      timeout=10  # Add a timeout value in seconds
-    )
-    
-    response = response.json()
-    print(response)
-    
-    return {'data': response, 'station': station[0]}
+    try:
+        station = get_closest_tide_station(lat, lon)
+        station_id = station[0]['properties']['Id']
+        url = os.getenv("TIDES_URL") + f"/{station_id}/TidalEvents?duration=2"
+        # Get the tide data for the current date
+        response = requests.get(url,
+        headers = {
+            'Ocp-Apim-Subscription-Key': os.getenv("TIDE_API_KEY")
+        },
+        timeout=10  # Add a timeout value in seconds
+        )
+        
+        response = response.json()
+        
+        return {'data': response, 'station': station[0]}
+    except Exception as e:
+        print(e)
+        return {"error": "Error fetching tide data"}
     
 
 

@@ -153,7 +153,7 @@ const Page = ({ data }) => {
 			{loading ? (
 				<p>Loading...</p>
 			) : (
-				<div className="border flex flex-col w-full rounded-lg ml-5 relative">
+				<div className="border flex flex-col w-full h-[900px] rounded-lg ml-5 relative">
 					<div className="ml-5 flex my-3 justify-between">
 						<p className="text-5xl font-bold">
 							Overview: {data.gin}
@@ -168,7 +168,7 @@ const Page = ({ data }) => {
 								</button>
 								<button
 									onClick={() => saveLayout()}
-									className="h-[45px] w-[100px] bg-primary text-white text-xl font-semibold rounded mr-5"
+									className="h-[45px] w-[100px] bg-button text-white text-xl font-semibold rounded mr-5"
 								>
 									Save
 								</button>
@@ -177,14 +177,14 @@ const Page = ({ data }) => {
 							<div>
 								<button
 									onClick={() => toggleEdit(true)}
-									className="w-[100px] h-[45px] bg-primary text-white text-xl font-semibold rounded mr-5"
+									className="w-[100px] h-[45px] bg-button text-white text-xl font-semibold rounded mr-5"
 								>
 									Edit
 								</button>
 							</div>
 						)}
 					</div>
-					<div className="flex w-full h-[725px]">
+					<div className="flex w-full h-[800px]">
 						<div className="w-[55%] bg-[#D9D9D9] m-5 h-full rounded-lg relative">
 							<CaseDetails data={data} />
 						</div>

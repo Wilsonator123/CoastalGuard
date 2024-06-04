@@ -36,7 +36,7 @@ const DayForcast = ({ weather }) => {
 	};
 
 	return (
-		<div className="row-start-3 col-start-1 col-span-4 row-span-5  flex flex-col gap-2 p-1 h-full">
+		<div className="row-start-3 col-start-1 col-span-4 row-span-6  flex flex-col gap-2 p-1 h-full">
 			<div className="grid grid-cols-2 grid-rows-2 w-full h-1/3 border p-1 text-lg items-center">
 				<div className="flex flex-col items-center justify-center border-b w-full h-full">
 					<div className="flex">

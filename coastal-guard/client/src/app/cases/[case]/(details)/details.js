@@ -59,7 +59,7 @@ const Details = ({ data }) => {
 							Location:
 						</h1>
 						<p className="col-span-1">{data.location}</p>
-						<p>GridRef: {data.gridRef}</p>
+						<p>GridRef: {data.grid_ref}</p>
 						<p>
 							Coords: {data.lat.toFixed(5)}, {data.lon.toFixed(5)}
 						</p>
@@ -67,16 +67,16 @@ const Details = ({ data }) => {
 						<p>W3W: {data.w3w}</p>
 						<div className="col-span-2 row-span-4 flex flex-col gap-1 text-2xl">
 							<p>{data.address?.road}</p>
-							<p>{data.address?.town}</p>
+							<p>{data.address?.town ?? data.address?.village}</p>
 							<p>{data.address?.county}</p>
 							<p>{data.address.postcode}</p>
 						</div>
 					</div>
-					<div className="w-1/2 h-full p-2">
+					<div className="w-1/2 h-[95%] p-2">
 						<DynamicComponentWithNoSSR
 							lat={data.lat}
 							lon={data.lon}
-							gridRef={data.grid_ref}
+							grid_ref={data.grid_ref}
 							w3w={data.w3w}
 						/>
 					</div>

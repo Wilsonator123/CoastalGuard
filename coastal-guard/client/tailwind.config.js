@@ -14,7 +14,7 @@ module.exports = {
 			background: "#f9f7f6",
 			primary: "#154975",
 			secondary: "#DBDADA",
-			accent: "#324251",
+			accent: "#002664ff",
 			zinc: "#DBDADA",
 			white: "#fff",
 			stone: "#F9F7F6",
@@ -22,6 +22,7 @@ module.exports = {
 			error: "#ff1f1f",
 			errorText: "#cc0000",
 			green: "#0f9d58",
+			button: "#e7b10cff",
 		},
 		extend: {
 			fontFamily: {

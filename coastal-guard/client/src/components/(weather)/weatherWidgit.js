@@ -42,7 +42,8 @@ export default function WeatherWidgit({ data, hours, edit, remove, position }) {
 				<div className="w-full h-full border rounded-lg">
 					<div className="h-2/3 relative flex items-center ">
 						<WeatherTitle
-							data={weather}
+							weather={weather}
+							data={data}
 							night={isNight(weather.sunset)}
 						/>
 					</div>

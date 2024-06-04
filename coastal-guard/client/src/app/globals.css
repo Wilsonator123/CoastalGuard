@@ -49,4 +49,8 @@ body {
 	.bg-tides {
 		background-image: var(--tides);
 	}
+
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
 }

@@ -166,24 +166,25 @@ def hello_world():
 @weather.route('/get-weather', methods=['GET'])
 def get_weather():
     try:
-        # location = weather_request.load(request.args)
-        # lon = location["lon"]
-        # lat = location["lat"]
+        
+        location = weather_request.load(request.args)
+        lon = location["lon"]
+        lat = location["lat"]
 
         
-        # url = ("%(url)s/onecall?lat=%(lat)s&lon=%(lon)s&appid=%(key)s&units=metric&exclude=minutely"
-        #        % {"url": os.getenv("WEATHER_URL"), "lat": lat, "lon": lon, "key": os.getenv("WEATHER_API_KEY")})
-        # response = requests.get(url)
+        url = ("%(url)s/onecall?lat=%(lat)s&lon=%(lon)s&appid=%(key)s&units=metric&exclude=minutely"
+               % {"url": os.getenv("WEATHER_URL"), "lat": lat, "lon": lon, "key": os.getenv("WEATHER_API_KEY")})
+        response = requests.get(url)
         
-        # if response.status_code != 200:
+        if response.status_code != 200:
             
-        #     return {"error": "Error fetching weather data"}, 500
-        # data = response.json()
+            return {"error": "Error fetching weather data"}, 500
+        data = response.json()
         
-        # return weather_response.loads(json.dumps(data))
-        with open("./weather_api/exampleResponse.json", 'r') as file:
-            response = file.read()
-        return json.loads(response)
+        return weather_response.loads(json.dumps(data))
+        # with open("./weather_api/exampleResponse.json", 'r') as file:
+        #     response = file.read()
+        # return json.loads(response)
     except ValidationError as error:
         return {"error": error.messages}, 400
 
@@ -191,13 +192,13 @@ def get_weather():
 @weather.route('/get-tides', methods=['GET'])
 def tides():
     try:
-        # location = tides_request.load(request.args)
-        # tides_data = get_tides(location["lat"], location["lon"])
-        # return tides_response.load(tides_data)
+        location = tides_request.load(request.args) 
+        tides_data = get_tides(location["lat"], location["lon"])
+        return tides_response.load(tides_data)
     
-        with open("./weather_api/exampleTides.json", 'r') as file:
-                response = file.read()
-        return json.loads(response)
+        # with open("./weather_api/exampleTides.json", 'r') as file:
+        #         response = file.read()
+        # return json.loads(response)
     except ValidationError as error:
         print(error)
         return {"error": error.messages}, 400

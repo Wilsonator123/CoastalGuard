@@ -35,7 +35,7 @@ const TideChart = ({ data }) => {
 	useEffect(() => {
 		const ctx = chartRef.current.getContext("2d");
 
-		const labels = data.map((item) => new Date(item.time));
+		const labels = data.map((item) => new Date(item.date));
 
 		const heights = data.map((item) => item.height);
 
@@ -98,7 +98,7 @@ const TideChart = ({ data }) => {
 	}, [data]);
 
 	return (
-		<div className="w-[100 %] h-[145px]">
+		<div className="w-[100%] h-[145px] flex items-center justify-center">
 			<canvas ref={chartRef}></canvas>
 		</div>
 	);

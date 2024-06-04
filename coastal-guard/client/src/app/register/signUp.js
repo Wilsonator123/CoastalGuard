@@ -140,7 +140,7 @@ export default function SignUp() {
 
 					<button
 						type="submit"
-						className="my-1 p-2 bg-secondary text-text text-xl rounded-2xl hover:brightness-[.9] border"
+						className="my-1 p-2 bg-button text-text text-xl rounded-2xl hover:brightness-[.9] border"
 					>
 						Sign Up
 					</button>

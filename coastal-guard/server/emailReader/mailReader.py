@@ -26,32 +26,43 @@ class EmailReader:
             self.find_gin(subject)
             if self.gin is None:
                 return False
+            
+            print("GIN Found: ", self.gin)
 
             self.file = self.db.read_file({"gin": self.gin}, 'incidents')
 
+            print("Checking if incident exists...")
             if self.file is not None:
                 self.exists = True
-
+                print("Incident exists")
+            
+            
             body = message['payload']['parts'][0]['body']['data']  # This is the email body in base64
             body = base64.urlsafe_b64decode(body.encode('UTF8'))  # Decoding the base64 email body
 
             self.data = {"gin": self.gin}
 
+            print("Reading email body...")
             body = self.read_body(str(body))
             if body is not None:
+                print("Email body read")
                 self.data.update(body)
 
+            print("Updating location...")
             self.update_location()
 
+            print("Scraping webpage...")
             self.scrape_webpage(self.data.get("link", None))
 
             if self.exists:
+                print("Updating incident...")
                 self.data["last_updated"] = str(datetime.datetime.now())
                 for key, value in list(self.data.items()):
                     if value == "None":
                         del self.data[key]
                 self.db.write_to_file({"gin": self.gin}, self.data, 'incidents')
             else:
+                print("Creating new incident incident...")
                 self.data["created_at"] = str(datetime.datetime.now())
                 print(self.db.create_file(self.data, 'incidents'))
             return True
@@ -125,11 +136,12 @@ class EmailReader:
             if grid_ref == "None":
                 return
             if old_data["grid_ref"] != grid_ref:
-                print("Updating location")
+                print("Getting Location...")
                 location = set_location(grid_ref)
                 for key in location:
                     self.data[key] = location[key]
         else:
+            print("Getting Location...")
             location = set_location(grid_ref)
 
             for key in location:
@@ -145,6 +157,7 @@ class EmailReader:
 
         page = scrape_page.ScrapePage(link)
         data = page.read_tables()
+        print("Getting Teams and Responders...")
         self.data["team"] = self.get_teams(data)
         self.data["responders"] = self.get_responders(data)
 

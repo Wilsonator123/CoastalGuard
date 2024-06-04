@@ -9,7 +9,7 @@ const NightBackground = require("@/assets/weather/NightBackground.png");
 // const SnowyBackground = require('@/assets/weather/SnowyBackground.png')
 import Sun from "@/assets/weather/icons/sun.svg";
 
-export default function WeatherTitle({ data, night }) {
+export default function WeatherTitle({ data, weather, night }) {
 	const background = (weather, night) => {
 		let src;
 		if (night) {
@@ -43,7 +43,7 @@ export default function WeatherTitle({ data, night }) {
 	const icon = (weather) => {};
 
 	const weatherTitle = (weather) => {
-		let title = data.weather.main;
+		let title = weather.weather.main;
 
 		return title.charAt(0).toUpperCase() + title.slice(1);
 	};
@@ -52,29 +52,33 @@ export default function WeatherTitle({ data, night }) {
 		<>
 			<div className="flex z-30 ml-5">
 				<div>
-					<p className="text-[64px] text-white">{data.temp}°</p>
+					<p className="text-[64px] text-white">{weather.temp}°</p>
 				</div>
 				<div className="flex flex-col justify-center pt-2">
 					<p className="text-[32px] text-white font-semibold leading-6">
-						{weatherTitle()}
+						{weatherTitle(weather)}
 					</p>
-					<p className="text-xl text-white font-semibold ">Ipswich</p>
+					<p className="text-xl text-white font-semibold ">
+						{data.address?.town ??
+							data.address?.village ??
+							data.address?.city}
+					</p>
 				</div>
 			</div>
-			{data.weather.main === "Sunny" ?? (
+			{weather.weather.main === "Sunny" ?? (
 				<Sun
 					className="absolute right-10 top-5 z-20"
 					width={60}
 					height={60}
 				/>
 			)}
-			{data.visibility <= 1000 && (
+			{weather.visibility <= 1000 && (
 				<div className="text-white font-bold text-xl absolute top-5 right-5 z-20">
 					<p>Low Visibility!</p>
-					<p>{data.visibility}m</p>
+					<p>{weather.visibility}m</p>
 				</div>
 			)}
-			{background(data.weather.main, night)}
+			{background(weather.weather.main, night)}
 		</>
 	);
 }

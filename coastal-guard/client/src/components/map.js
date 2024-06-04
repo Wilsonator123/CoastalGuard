@@ -4,7 +4,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { getDistance } from "@/hooks/maps";
 
-export default function Map({ gridRef, lon, lat, w3w }) {
+export default function Map({ grid_ref, lon, lat, w3w }) {
 	const [distance, setDistance] = useState(null);
 	const [userLocation, setUserLocation] = useState(null);
 
@@ -83,7 +83,7 @@ export default function Map({ gridRef, lon, lat, w3w }) {
 			</div>
 			<div className="flex flex-row w-full justify-between p-2">
 				<div>
-					<p className="text-xl font-bold">{gridRef}</p>
+					<p className="text-xl font-bold">{grid_ref}</p>
 					<p className="text-xl font-bold">
 						{lat.toFixed(5)}, {lon.toFixed(5)}
 					</p>
