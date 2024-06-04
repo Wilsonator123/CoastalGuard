@@ -153,7 +153,7 @@ const Page = ({ data }) => {
 			{loading ? (
 				<p>Loading...</p>
 			) : (
-				<div className="border flex flex-col w-full rounded-lg ml-5 relative">
+				<div className="border flex flex-col w-full h-[900px] rounded-lg ml-5 relative">
 					<div className="ml-5 flex my-3 justify-between">
 						<p className="text-5xl font-bold">
 							Overview: {data.gin}
@@ -184,7 +184,7 @@ const Page = ({ data }) => {
 							</div>
 						)}
 					</div>
-					<div className="flex w-full h-[725px]">
+					<div className="flex w-full h-[800px]">
 						<div className="w-[55%] bg-[#D9D9D9] m-5 h-full rounded-lg relative">
 							<CaseDetails data={data} />
 						</div>

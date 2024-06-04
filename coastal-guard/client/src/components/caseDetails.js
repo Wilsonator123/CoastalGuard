@@ -75,7 +75,7 @@ export default function CaseDetails({ data }) {
 				<DynamicComponentWithNoSSR
 					lat={data.lat}
 					lon={data.lon}
-					gridRef={data.gridRef}
+					grid_ref={data.grid_ref}
 					w3w={data.w3w}
 				/>
 			</div>
