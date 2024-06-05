@@ -1,23 +1,7 @@
-# CoastalGuard
+# CoastGuard
 
-Technologies Used:
-- NextJS (React)
-- TailwindCSS
-- Flask
-- Google Gmail API
-- Google 0Auth2
-- Beautiful Soup website scrapper
-- GitActions
-- Docker
-- AWS
+To run this code! 
 
-
-    <img src="https://github.com/Wilsonator123/coastal-guard/assets/106590637/864dedf0-a33f-4c97-9f55-7c4851882106" width="40%" height="185px" />
-    <img src="https://github.com/Wilsonator123/coastal-guard/assets/106590637/79bc48e6-d5de-4456-8814-684138220407"
-    width="40%" height="185px" />
-
-  
-    <img src="https://github.com/Wilsonator123/coastal-guard/assets/106590637/c3a2a06c-4b7b-4352-9a1c-f43147cfb3d9"
-      width="40%" height="185px" />
-    <img src="https://github.com/Wilsonator123/coastal-guard/assets/106590637/b5a540d5-aad5-4694-a9b1-286601f557f8"
-      width="40%" height="185px" />
+1. Download MongoDB to your local system
+2. Make sure you download all the required libraries both client and server
+3. Run both client and server through termnial
